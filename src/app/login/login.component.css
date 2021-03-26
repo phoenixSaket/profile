@@ -1,0 +1,39 @@
+.login-form {
+    background-color: honeydew;
+
+    color: black;
+}
+
+.padding20 {
+    padding: 20px;
+}
+
+.padding5 {
+    padding: 5px;
+}
+
+.margin20 {
+    margin: 20px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.color-red {
+    color: #bf0000;
+}
+
+.height20 {
+    height: 20px;
+}
+
+.error, .title {
+    word-spacing: 8px;
+    letter-spacing: 3px;
+}
+
+.title {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}

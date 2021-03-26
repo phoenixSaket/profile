@@ -1,0 +1,39 @@
+<div class="w-100 shadow padding20">
+    <div class="login-title d-flex justify-content-center">
+        <h2 class="title">WELCOME TO NOTES KEEPER !</h2>
+    </div>
+    <form class="add-patient-form" [formGroup]="form">
+        <!-- <div class="mat-headline w-100 d-flex justify-content-center">
+          Add Patient
+        </div> -->
+        <div class="w-100 d-flex flex-row">
+            <div
+                class="add-patient-details w-100 padding20 margin20 d-flex flex-column justify-content-center align-items-center ">
+                <!--Reactive form Validaions-->
+
+                <div class="w-100 d-flex align-items-center justify-content-between padding5">
+                    <mat-label>Email</mat-label>
+                    <div class="w-75">
+                        <input matInput type="email" name="email" value="" class="form-control" formControlName="emailId" (change)="mailChanged($event)"/>
+                    </div>
+                </div>
+
+                <div class=" w-100 d-flex align-items-center justify-content-between padding5">
+                    <mat-label>Password</mat-label>
+                    <div class="w-75">
+                        <input matInput type="password" name="pass" value="" class="form-control"
+                            formControlName="password" (change)="passChanged($event)"/>
+                    </div>
+                </div>
+
+                <button class="margin-top-20" mat-raised-button color="primary" 
+                    (click)="checkLogin($event)">Login</button>
+            </div>
+        </div>
+        <div class="invalid-cred d-flex justify-content-center color-red height20" >
+            <span class="error" *ngIf="!this.isLoginValid && this.loginChecked">{{this.errorString}}</span>
+        </div>
+
+    </form>
+
+</div>
