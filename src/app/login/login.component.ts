@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as loginData from '../data-files/login-data.json';
-// import { MatInputModule } from 'MaterialModule';
+import { Router } from '@angular/router';
+import { NotesServiceService } from '../notes-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,28 +11,34 @@ export class LoginComponent implements OnInit {
 
   private email: string = "";
   private password: string = "";
-  private isLoginValid: boolean = false;
-  private loginChecked: boolean = false;
-  private errorString: string;
-
-  constructor() { }
+  isLoginValid: boolean = false;
+  loginChecked: boolean = false;
+  errorString: string;
+  screen: any = {
+    width: 0,
+    height: 0,
+  }
+  constructor(private router: Router, private service: NotesServiceService) {
+    this.screen.width = screen.width;
+   }
 
   ngOnInit(): void {
-    console.log(loginData);
+    console.log(this.service.loginData);
   }
 
   checkLogin(event) {
     event.preventDefault();
     this.loginChecked = true;
-    loginData.default.data.forEach(element => {
+    this.service.loginData.default.data.forEach(element => {
       if (this.email === element.email) {
         if (this.password === element.password) {
           console.log("||     M-U-B-A-R-A-K-A     ||");
           this.errorString = "||     MUBARAKA     ||"; 
           this.isLoginValid = true;
+          this.router.navigate(["/notes"]);
         } else {
           console.log("AALA MOTHA SHAHANA");
-          this.errorString = "||     A-A-L-A     M-O-T-H-A     S-H-A-H-A-N-A     ||"; 
+          this.errorString = "||     AALA     MOTHA     SHAHANA     ||"; 
           this.isLoginValid = false;
         }
       } else {

@@ -1,0 +1,32 @@
+<div class="note shadow padding20 margin20 d-flex flex-column justify-content-center text-center font-size-25 pointer" *ngIf="!addNote" (click)="toggleAddNote()">
+    <i class="fa fa-plus-square"></i>
+</div>
+
+<div class="note shadow padding20 margin20 d-flex flex-column justify-content-center" *ngIf="addNote">
+
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+        <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)">
+    </mat-form-field>
+
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+        <input matInput type="text" placeholder="Subtitle" (change)="updateValueSubtitle($event)">
+    </mat-form-field>
+   
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+        <input matInput type="text" placeholder="Author" (change)="updateValueAuthor($event)">
+    </mat-form-field>
+   
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+        <input matInput type="text" (change)="updateBGColor($event)" placeholder="Background Color" >
+    </mat-form-field>
+   
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+        <input matInput type="text" (change)="updateColor($event)" placeholder="Text Color">
+    </mat-form-field>
+
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+        <textarea matInput placeholder="Content" (change)="updateContent($event)"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="submitData()">Add to Notes</button>
+</div>

@@ -1,0 +1,38 @@
+<div class="note shadow padding20 margin20 d-flex flex-column justify-content-between"
+    [style.fontFamily]="note.fontFamily" [style.color]="note.textColor" [style.backgroundColor]="note.backgroundColor">
+    <div class="top-container text-center w-100 border-bottom ">
+        <div class="title-container">
+            <span class="title">
+                {{note.title}}
+            </span>
+        </div>
+        <div class="subtitle-container">
+            <span class="subtitle">
+                {{note.subtitle}}
+            </span>
+        </div>
+    </div>
+
+    <div class="middle-container" [style.fontSize]="note.fontSize">
+        <div class="content-container border-bottom">
+            {{this.shortContent}}
+            <div class="more-less-container w-100 d-flex justify-content-end">
+                <div class="bold-italic" (click)="toggleShortContent()" *ngIf="this.contentShortened && this.contentLength">Show More</div>
+                <div class="bold-italic" (click)="toggleShortContent()" *ngIf="!this.contentShortened && this.contentLength">Show Less</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-container">
+        <div class="author-container w-100 d-flex justify-content-end">
+            <div class="author">
+                - {{note.author}}
+            </div>
+        </div>
+        <div class="date-container w-100 d-flex justify-content-end">
+            <div class="date">
+                {{note.date}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="back-container w-100 justify-content-end align-items-center d-flex  pointer" routerLink="/">
+    <div class="align-items-center d-flex padding20">
+        <i class="fa fa-sign-out padding-right10 font-size-25"></i>
+        <span>Log out</span>
+    </div>
+</div>
+<div class="notes-container padding20 d-flex flex-wrap justify-content-center">
+    <div *ngFor="let note of this.notesData">
+        <app-note [note]="note"></app-note>
+    </div>
+    <div>
+        <app-add-note></app-add-note>
+    </div>
+</div>
