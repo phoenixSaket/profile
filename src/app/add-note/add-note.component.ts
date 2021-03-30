@@ -66,6 +66,7 @@ export class AddNoteComponent implements OnInit {
     this.data.date = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getFullYear();
     console.log(this.data);
     this.service.addtoNotes(this.data);
+    this.data = {};
     this.addNote = false;
   }
 }
