@@ -10,7 +10,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
-
 const Components = [
   MatButtonModule,
   MatFormFieldModule,
@@ -20,7 +19,7 @@ const Components = [
   MatToolbarModule,
   MatSidenavModule,
   MatSnackBarModule,
-  
+  MatSelectModule,
 ];
 
 @NgModule({

@@ -3,8 +3,49 @@
 @import 'https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.css';
 
+/* {
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Kiwi Maru', serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Ubuntu', sans-serif;
+} */
+
+
+.font-family-Inconsolata {font-family: 'Inconsolata', monospace;}
+.font-family-KiwiMaru { font-family: 'Kiwi Maru', serif;}
+.font-family-Merriweather { font-family: 'Merriweather', serif;}
+.font-family-Nunito {font-family: 'Nunito', sans-serif;}
+.font-family-NunitoSans {font-family: 'Nunito Sans', sans-serif;}
+.font-family-OpenSans {font-family: 'Open Sans', sans-serif;}
+.font-family-Raleway { font-family: 'Raleway', sans-serif;}
+.font-family-Roboto {font-family: 'Roboto', sans-serif;}
+.font-family-RobotoSlab {font-family: 'Roboto Slab', serif;}
+.font-family-Rubik { font-family: 'Rubik', sans-serif;}
+.font-family-SourceCodePro {font-family: 'Source Code Pro', monospace;}
+.font-family-Ubuntu { font-family: 'Ubuntu', sans-serif;}
+.font-family-Cabin {font-family: "Cabin", sans-serif;}
+
+
 html, body { height: 100%; }
-body { margin: 0; font-family: "Cabin", sans-serif  !important;  }
+body { 
+    margin: 0;
+    font-family: "Cabin", sans-serif  !important;
+    background-image: url("https://raw.githubusercontent.com/phoenixSaket/lekhaverma/master/src/Images/BG.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-size: cover;
+    background-color: white;
+}
 
 .padding20 {
     padding: 20px;
@@ -28,4 +69,12 @@ body { margin: 0; font-family: "Cabin", sans-serif  !important;  }
 
 .height100 {
     height: 100vh;
+}
+
+.margin-bottom-20 { 
+    margin-bottom: 20px;
+}
+
+.circle {
+    border-radius: 50%;
 }

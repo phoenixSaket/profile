@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
     this.screen.width = screen.width;
    }
 
-  ngOnInit(): void {
-    console.log(this.service.loginData);
-  }
+  ngOnInit(): void {}
 
   checkLogin(event) {
     event.preventDefault();
@@ -32,17 +30,14 @@ export class LoginComponent implements OnInit {
     this.service.loginData.default.data.forEach(element => {
       if (this.email === element.email) {
         if (this.password === element.password) {
-          console.log("||     M-U-B-A-R-A-K-A     ||");
           this.errorString = "||     MUBARAKA     ||"; 
           this.isLoginValid = true;
           this.router.navigate(["/notes"]);
         } else {
-          console.log("AALA MOTHA SHAHANA");
           this.errorString = "||     AALA     MOTHA     SHAHANA     ||"; 
           this.isLoginValid = false;
         }
       } else {
-          console.log("AALA MOTHA SHAHANA");
           this.errorString = "||     AALA  MOTHA  SHAHANA     ||";
           this.isLoginValid = false;
         }
@@ -52,12 +47,10 @@ export class LoginComponent implements OnInit {
   }
 
   mailChanged(event) {
-    console.log("Mail : ", event.target.value);
     this.email = event.target.value;
   }
 
   passChanged(event) {
-    console.log("Password : ", event.target.value);
     this.password = event.target.value;
   }
 }

@@ -22,8 +22,8 @@ export class NoteComponent implements OnInit {
 
   shortenContent() {
     let content = this.note.content;
-    let words = content.split(' ');
-
+    let words = content.toString().split(' ');
+    
     if (words.length > 30) {
       for (let i = 0; i < 30; i++) {
         this.shortContent = this.shortContent + ' ' + words[i];

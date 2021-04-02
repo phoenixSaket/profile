@@ -1,5 +1,5 @@
 .note {
-    min-width: 350px;
+    min-width: 400px;
     max-width: 400px;
     min-height: 250px;
     width: fit-content;
@@ -26,3 +26,31 @@ input.mat-input-element.mat-form-field-autofill-control {
 .font-size-25 {
     font-size:25px;
 } 
+
+input[type="color"] {
+    height: 40px  !important;
+}
+
+.font-size-selector {
+    height: 52px !important;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.font-70 {
+    font-size: 70px;
+}
+
+.colored {
+    color: rgb(237,215,142);
+}
+
+.bg-colored {
+    background-image: url("https://raw.githubusercontent.com/phoenixSaket/saketVerma/master/saketverma/src/Images/BG_new.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}

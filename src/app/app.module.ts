@@ -9,6 +9,7 @@ import { MaterialModule } from './material/material.module';
 import { NotesMainPageComponent } from './notes-main-page/notes-main-page.component';
 import { NoteComponent } from './note/note.component';
 import { AddNoteComponent } from './add-note/add-note.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddNoteComponent } from './add-note/add-note.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

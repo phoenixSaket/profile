@@ -15,7 +15,8 @@
 
     <div class="middle-container" [style.fontSize]="note.fontSize">
         <div class="content-container border-bottom">
-            {{this.shortContent}}
+            <!-- {{this.shortContent}} -->
+            <div [innerHTML] ="this.shortContent"></div>
             <div class="more-less-container w-100 d-flex justify-content-end">
                 <div class="bold-italic" (click)="toggleShortContent()" *ngIf="this.contentShortened && this.contentLength">Show More</div>
                 <div class="bold-italic" (click)="toggleShortContent()" *ngIf="!this.contentShortened && this.contentLength">Show Less</div>
