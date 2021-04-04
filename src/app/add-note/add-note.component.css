@@ -1,18 +1,17 @@
 .note {
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 380px;
+    max-width: 380px;
     min-height: 250px;
     width: fit-content;
 }
 
 .bold-italic {
     font-weight: 800;
-    
 }
 
 input.mat-input-element.mat-form-field-autofill-control {
     /* text-align: center; */
-    height: 20px;
+    height: 30px;
 }
 
 .padding-bottom-10 {
@@ -35,7 +34,15 @@ input[type="color"] {
 }
 
 .font-size-selector {
-    height: 52px !important;
+    height: 44px !important;
+}
+
+.font-size-50 {
+    font-size: 50px;
+}
+
+.cursor {
+    cursor: pointer;
 }
 
 .w-70 {
@@ -70,8 +77,16 @@ input[type="color"] {
     cursor: pointer;
 }
 
-.tag:hover {
-    background-color: tomato;
+.cancel-button {
+    display: none;
+}
+
+.tag:hover{
+    background-color: #ffb5a7;
+}
+
+.tag:hover .cancel-button{
+    display: block;
 }
 
 .wrap {
@@ -82,6 +97,9 @@ input[type="color"] {
     height: fit-content;
 }
 
+.padding-right-10 {
+    padding-right: 5px;
+}
 
 
 

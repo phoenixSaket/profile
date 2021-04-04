@@ -14,67 +14,97 @@
 
 <div class="note bg-colored shadow padding20 margin20 d-flex flex-column justify-content-center" *ngIf="addNote">
 
-    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center">
         <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)">
     </mat-form-field>
 
-    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+    <mat-form-field class="w-100 d-flex flex-column justify-content-center">
         <input matInput type="text" placeholder="Subtitle" (change)="updateValueSubtitle($event)">
     </mat-form-field>
 
-    <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
-        <input matInput type="text" placeholder="Author" (change)="updateValueAuthor($event)">
-    </mat-form-field> -->
-
-    <div class="font-container w-100 d-flex justify-content-between">
-        <mat-form-field class="w-70 d-flex flex-column justify-content-center height-100">
-            <mat-label>Select you font of choice</mat-label>
-            <mat-select [(value)]="selectedFont">
-                <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">
-                    {{font}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field id="font-size-selector"
-            class="font-size-selector w-25 d-flex flex-column justify-content-center">
-            <mat-label>Font Size</mat-label>
-            <input matInput type="number" value="15" (change)="updateFontSize($event)">
-        </mat-form-field>
-    </div>
-
-    <div class="color-container w-100 d-flex justify-content-between">
-        <mat-form-field class="w-50 d-flex flex-column justify-content-center height-100">
-            <input matInput type="color" [value]="this.backgroundColor" (change)="updateBGColor($event)"
-                placeholder="Background Color">
-        </mat-form-field>
-
-        <mat-form-field class="w-50 d-flex flex-column justify-content-center height-100">
-            <input matInput type="color" [value]="this.textColor" (change)="updateColor($event)"
-                placeholder="Text Color">
-        </mat-form-field>
-    </div>
-
-    <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
-        <textarea matInput placeholder="Content" rows="5" (change)="updateContent($event)"></textarea>
-    </mat-form-field> -->
-
-    <div class="w-100 margin-bottom-20">
+    <div class="w-100 margin-bottom-5">
         <ckeditor [editor]="Editor"
             [config]="{ toolbar: [  'bold', 'italic' , '|', 'link', '|' , 'bulletedList', 'numberedList', '|' , 'undo', 'redo' ] }"
             [(data)]="this.editor.data" (change)="updateContent($event)"></ckeditor>
     </div>
 
-    <div class="tags-adder-container d-flex align-items-center justify-content-between">
-        <mat-form-field class="w-75 d-flex flex-column justify-content-center height-100">
-            <mat-label>Tags</mat-label>
-            <input #tag matInput type="text" (change)="addToTags($event); tag.value= ''">
-        </mat-form-field>
-        <button mat-raised-button class="w-25" class="add-tag" color="custom">Add tag</button>
+    <div class="w-100 d-flex justify-content-between align-items-center">
+        <span>Advanced Settings</span>
+        <span class="material-icons cursor font-size-50" (click)="toggleAdvancedSettings()"
+            [innerHTML]="this.showAdvancedSettings ? 'toggle_on' : 'toggle_off'"
+            [style.color]="this.showAdvancedSettings ? 'blue' : 'gray'"
+            >
+        </span>
     </div>
 
-    <div class="tags-container d-flex wrap" >
-        <div (click)="removeFromTags(tag)" *ngFor="let tag of this.tags" class="tag width-fit" >
-            <div>{{tag}}</div>
+    <div class="advanced-container" *ngIf="this.showAdvancedSettings">
+        <div class="color-container w-100 d-flex justify-content-between">
+            <mat-form-field class="w-50 d-flex flex-column justify-content-center">
+                <input matInput type="color" [value]="this.backgroundColor" (change)="updateBGColor($event)"
+                    placeholder="Background Color">
+            </mat-form-field>
+
+            <mat-form-field class="w-50 d-flex flex-column justify-content-center">
+                <input matInput type="color" [value]="this.textColor" (change)="updateColor($event)"
+                    placeholder="Text Color">
+            </mat-form-field>
+        </div>
+
+        <div class="font-container w-100 d-flex justify-content-between">
+            <mat-form-field class="w-70 d-flex flex-column justify-content-center">
+                <mat-label>Select you font of choice</mat-label>
+                <mat-select [(value)]="selectedFont">
+                    <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">
+                        {{font}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field id="font-size-selector"
+                class="font-size-selector w-25 d-flex flex-column justify-content-center">
+                <mat-label>Font Size</mat-label>
+                <input matInput type="number" value="15" (change)="updateFontSize($event)">
+            </mat-form-field>
+        </div>
+
+        <div class="tags-adder-container d-flex align-items-center justify-content-between">
+            <mat-form-field class="w-75 d-flex flex-column justify-content-center">
+                <mat-label>Tags</mat-label>
+                <input #tag matInput type="text" (change)="addToTags($event); tag.value= ''">
+            </mat-form-field>
+            <button mat-raised-button class="w-25" class="add-tag" color="custom">Add tag</button>
+        </div>
+
+        <div class="tags-container d-flex wrap">
+            <div *ngFor="let tag of this.tags" class="tag width-fit">
+                <div class="width-fit d-flex justify-content-between align-items-center">
+                    <span class="padding-right-10">{{tag}}</span>
+                    <span class="material-icons cancel-button" (click)="removeFromTags(tag)">
+                        cancel
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tags-adder-container d-flex align-items-center justify-content-between">
+            <mat-form-field class="w-75 d-flex flex-column justify-content-center">
+                <mat-label>Links</mat-label>
+                <input #link matInput type="text" (change)="addToLinks($event); link.value= ''">
+            </mat-form-field>
+            <button mat-raised-button class="w-25 add-tag" color="custom">Add link</button>
+        </div>
+        <span class="invalid" *ngIf="this.linkError.length > 0">
+            {{this.linkError}}
+        </span>
+
+        <div class="tags-container d-flex wrap">
+            <div *ngFor="let link of this.links" class="tag w-100 ">
+                <div class="w-100 d-flex justify-content-between align-items-center">
+                    <span class="link">{{link}}</span>
+                    <span class="material-icons cancel-button" (click)="removeFromLinks(link)">
+                        cancel
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 

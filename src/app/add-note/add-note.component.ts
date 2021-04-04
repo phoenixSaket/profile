@@ -4,6 +4,7 @@ import { NotesServiceService } from '../notes-service.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular';
 import { element } from 'protractor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-note',
@@ -25,6 +26,7 @@ export class AddNoteComponent implements OnInit {
   colorCtr = new FormControl('');
   selectedFont = 'Cabin';
   tags: any[] = [];
+  links: any[] = [];
 
   fontArray: string[] = [
     "Cabin",
@@ -56,8 +58,10 @@ export class AddNoteComponent implements OnInit {
     tags: [],
     images: []
   }
+  linkError: string = "";
+  showAdvancedSettings: any;
 
-  constructor(private service: NotesServiceService) { }
+  constructor(private service: NotesServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.data = {};
@@ -76,6 +80,7 @@ export class AddNoteComponent implements OnInit {
 
   toggleAddNote() {
     this.addNote = true;
+    this.router.navigate(['#add-note']);
   }
 
   updateValueTitle(event) {
@@ -102,30 +107,65 @@ export class AddNoteComponent implements OnInit {
   addToTags(event) {
     let check = 0;
     this.tags.forEach(element => {
-      if(element === event.target.value.trim()) {
+      if (element === event.target.value.trim()) {
         check = 1;
       }
     });
 
-    if(check == 0) {
+    if (check == 0) {
       this.tags.push(event.target.value);
     }
   }
 
 
   removeFromTags(tag) {
-    
     for (let i = this.tags.indexOf(tag); i < this.tags.length; i++) {
       if (i + 1 === this.tags.length) {
         this.tags.pop();
       } else {
-        this.tags[i] = this.tags[i + 1];        
+        this.tags[i] = this.tags[i + 1];
       }
     }
+  }
 
+  addToLinks(event) {
+    let check = 0;
+    this.links.forEach(element => {
+      if (element === event.target.value.trim()) {
+        check = 1;
+      }
+    });
+
+    let pattern = new RegExp(/(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    let res = pattern.test(event.target.value);
+
+    if (check == 0) {
+      if (res) {
+        this.links.push(event.target.value);
+        this.linkError = "";
+      } else {
+        this.linkError = "Invalid Link";
+      }
+    }
+  }
+
+  removeFromLinks(link) {
+    for (let i = this.links.indexOf(link); i < this.links.length; i++) {
+      if (i + 1 === this.links.length) {
+        this.links.pop();
+      } else {
+        this.links[i] = this.links[i + 1];
+      }
+    }
+  }
+
+  toggleAdvancedSettings() {
+    this.showAdvancedSettings = !this.showAdvancedSettings;
   }
 
   submitData() {
+    this.data.tags = this.tags;
+    this.data.links = this.links;
     this.data.content = this.editor.data;
     this.data.fontFamily = this.selectedFont;
     this.data.backgroundColor = this.backgroundColor;

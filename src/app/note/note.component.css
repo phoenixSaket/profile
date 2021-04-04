@@ -1,6 +1,6 @@
 .note {
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 380px;
+    max-width: 380px;
     min-height: 250px;
     width: fit-content;
 }
@@ -16,4 +16,57 @@
 
 .content-container {
     overflow-wrap: break-word;
+}
+
+.width-fit {
+    width: fit-content;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.title-container {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+.tag {
+    padding: 10px;
+    background-color: #ffffff60;
+    margin: 5px 5px 5px 0px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.content-container {
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+}
+
+.middle-container {
+    margin-top:15px;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.tag-container, .link-container {
+    margin-bottom: 10px;
+}
+
+.link {
+    padding:10px;
+    background-color: #ffffff60;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+a {
+    color: unset !important;
 }
