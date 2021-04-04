@@ -1,7 +1,13 @@
 <div mat-button-icon
-    class="note bg-colored shadow padding20 margin20 d-flex flex-column justify-content-center align-items-center text-center font-size-25 pointer"
+    class="note bg-colored shadow padding20 margin20 flex-column justify-content-center align-items-center text-center font-size-25 pointer notOnMobile"
     *ngIf="!addNote" (click)="toggleAddNote()">
     <span class="material-icons circle font-70 colored">
+        add_circle
+    </span>
+</div>
+
+<div class="onlyOnMobile shadow">
+    <span class="material-icons circle font-70 colored shadow" *ngIf="!addNote" (click)="toggleAddNote()">
         add_circle
     </span>
 </div>
@@ -16,11 +22,9 @@
         <input matInput type="text" placeholder="Subtitle" (change)="updateValueSubtitle($event)">
     </mat-form-field>
 
-    <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
+    <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center height-100">
         <input matInput type="text" placeholder="Author" (change)="updateValueAuthor($event)">
-    </mat-form-field>
-
-
+    </mat-form-field> -->
 
     <div class="font-container w-100 d-flex justify-content-between">
         <mat-form-field class="w-70 d-flex flex-column justify-content-center height-100">
@@ -34,7 +38,7 @@
         <mat-form-field id="font-size-selector"
             class="font-size-selector w-25 d-flex flex-column justify-content-center">
             <mat-label>Font Size</mat-label>
-            <input matInput type="number" (change)="updateFontSize($event)">
+            <input matInput type="number" value="15" (change)="updateFontSize($event)">
         </mat-form-field>
     </div>
 
@@ -58,6 +62,20 @@
         <ckeditor [editor]="Editor"
             [config]="{ toolbar: [  'bold', 'italic' , '|', 'link', '|' , 'bulletedList', 'numberedList', '|' , 'undo', 'redo' ] }"
             [(data)]="this.editor.data" (change)="updateContent($event)"></ckeditor>
+    </div>
+
+    <div class="tags-adder-container d-flex align-items-center justify-content-between">
+        <mat-form-field class="w-75 d-flex flex-column justify-content-center height-100">
+            <mat-label>Tags</mat-label>
+            <input #tag matInput type="text" (change)="addToTags($event); tag.value= ''">
+        </mat-form-field>
+        <button mat-raised-button class="w-25" class="add-tag" color="custom">Add tag</button>
+    </div>
+
+    <div class="tags-container d-flex wrap" >
+        <div (click)="removeFromTags(tag)" *ngFor="let tag of this.tags" class="tag width-fit" >
+            <div>{{tag}}</div>
+        </div>
     </div>
 
     <button mat-raised-button color="primary" (click)="submitData()">Add to Notes</button>

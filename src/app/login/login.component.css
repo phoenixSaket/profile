@@ -39,12 +39,13 @@
    text-align: center;
 }
 
-.main-container{
-    font-family: "Cabin"  !important;
-}
-
 .height300 {
     height: 300px;
+}
+
+.mat-raised-button.mat-custom {
+    background-color: #e8cc6e;
+    color: #121212;
 }
 
 /* Start for mobile CSS */

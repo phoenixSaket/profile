@@ -47,6 +47,11 @@ body {
     background-color: white;
 }
 
+.main-container{
+    font-family: "Cabin"  !important;
+    width: 100%;
+}
+
 .padding20 {
     padding: 20px;
 }
@@ -77,4 +82,34 @@ body {
 
 .circle {
     border-radius: 50%;
+}
+
+.ck.ck-toolbar {
+    background: unset !important;
+    border: unset !important;
+}
+
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+    border-color: white !important;
+    border: white !important;
+    box-shadow: var(--ck-inner-shadow),0 0;
+}
+
+/* .ck.ck-toolbar>.ck-toolbar__items {
+    justify-content: center !important;
+} */
+.ck.ck-reset.ck-editor.ck-rounded-corners {
+    border: 4px solid #caf0ff;
+}
+
+.ck-focused {
+    border: none !important;
+}
+
+.ck.ck-sticky-panel {
+    background-color: #caf0ff !important;
+}
+
+.mat-raised-button.mat-custom {
+    background-color: #e8cc6e;
 }

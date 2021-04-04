@@ -1,56 +1,113 @@
 {
     "data": [
         {
-            "title": "Add your notes here",
-            "subtitle": "subtitle",
-            "content": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
-            "date": "30-03-2021",
-            "author": "Saket Verma",
-            "textColor": "#000000",
-            "backgroundColor": "#ffafbf",
-            "fontFamily": "Consolas",
-            "fontSize": "",
-            "links": "",
-            "images": ""
+            "userId": "1",
+            "data": [
+                {
+                    "title": "Discrimination",
+                    "subtitle": "Men should be conmsidered equals too",
+                    "content": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+                    "date": "30-03-2021",
+                    "author": "Saket Verma",
+                    "textColor": "#000000",
+                    "backgroundColor": "#ffafbf",
+                    "fontFamily": "Consolas",
+                    "fontSize": "",
+                    "links": "",
+                    "images": "",
+                    "tags": []
+                },
+                {
+                    "title": "Pain",
+                    "subtitle": "Pain VS Pleasure",
+                    "content": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
+                    "date": "30-03-2021",
+                    "author": "Saket Verma",
+                    "textColor": "#000000",
+                    "backgroundColor": "#affdff",
+                    "fontFamily": "",
+                    "fontSize": "",
+                    "links": "",
+                    "images": "",
+                    "tags": []
+                },
+                {
+                    "title": "Holier than thou",
+                    "subtitle": "Copied from some holy quote about Jesus",
+                    "content": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+                    "date": "30-03-2021",
+                    "author": "Saket Verma",
+                    "textColor": "#457435",
+                    "backgroundColor": "#1ff0ff",
+                    "fontFamily": "",
+                    "fontSize": "15px",
+                    "links": "",
+                    "images": "",
+                    "tags": []
+                },
+                {
+                    "title": "Holier than Thou - Part 2",
+                    "subtitle": "Copied from some holy quote about Jesus",
+                    "content": "One thing I ask from the LORD, this only do I seek: that I may dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD and to seek him in his temple.",
+                    "date": "30-03-2021",
+                    "author": "Saket Verma",
+                    "textColor": "#0a0040",
+                    "backgroundColor": "#f4f2ff",
+                    "fontFamily": "Roboto",
+                    "fontSize": "15px",
+                    "links": "",
+                    "images": "",
+                    "tags": []
+                }
+            ]
         },
         {
-            "title": "Add your notes here",
-            "subtitle": "subtitle",
-            "content": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
-            "date": "30-03-2021",
-            "author": "Saket Verma",
-            "textColor": "#000000",
-            "backgroundColor": "#affdff",
-            "fontFamily": "",
-            "fontSize": "",
-            "links": "",
-            "images": ""
-        },
-        {
-            "title": "Add your notes here",
-            "subtitle": "subtitle",
-            "content": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
-            "date": "30-03-2021",
-            "author": "Saket Verma",
-            "textColor": "#457435",
-            "backgroundColor": "#1ff0ff",
-            "fontFamily": "",
-            "fontSize": "15px",
-            "links": "",
-            "images": ""
-        },
-        {
-            "title": "Add your notes here",
-            "subtitle": "subtitle",
-            "content": "One thing I ask from the LORD, this only do I seek: that I may dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD and to seek him in his temple.",
-            "date": "30-03-2021",
-            "author": "Saket Verma",
-            "textColor": "#0a0040",
-            "backgroundColor": "#f4f2ff",
-            "fontFamily": "Roboto",
-            "fontSize": "15px",
-            "links": "",
-            "images": ""
+            "userId": "2",
+            "data": [
+                {
+                    "title": "Welcome",
+                    "subtitle": "Welcome to Notes keeper",
+                    "content": "Your content goes here",
+                    "date": "30-03-2021",
+                    "author": "Your Name",
+                    "textColor": "#000000",
+                    "backgroundColor": "#ffafbf",
+                    "fontFamily": "",
+                    "fontSize": "",
+                    "links": "",
+                    "images": "",
+                    "tags": []
+                },
+                {
+                    "title": "Welcome",
+                    "subtitle": "Welcome to Notes keeper",
+                    "content": "Edit your font Style, Font Color, Font Size, bbackground Color.</br>Go crazy !",
+                    "date": "30-03-2021",
+                    "author": "Saket Verma",
+                    "textColor": "#000000",
+                    "backgroundColor": "#affdff",
+                    "fontFamily": "",
+                    "fontSize": "",
+                    "links": "",
+                    "images": "",
+                    "tags": []
+                },
+                {
+                    "title": "Welcome",
+                    "subtitle": "Welcome to notes keeper",
+                    "content": "Click the plus button to add your note.",
+                    "date": "30-03-2021",
+                    "author": "Saket Verma",
+                    "textColor": "#457435",
+                    "backgroundColor": "#1ff0ff",
+                    "fontFamily": "",
+                    "fontSize": "15px",
+                    "links": "",
+                    "images": "",
+                    "tags": []
+                }
+            ]
         }
+        
     ]
 }

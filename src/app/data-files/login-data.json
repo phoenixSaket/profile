@@ -2,7 +2,13 @@
     "data": [
         {
             "email": "test",
-            "password": "pass"
+            "password": "pass",
+            "userId": "1"
+        },
+        {
+            "email": "guest",
+            "password": "pass",
+            "userId": "2"
         }
     ]
 }

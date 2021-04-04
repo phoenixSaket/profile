@@ -9,10 +9,16 @@ import { NotesServiceService } from '../notes-service.service';
 export class NotesMainPageComponent implements OnInit {
 
   notesData: any;
+  loginData: any;
+
   constructor(private service: NotesServiceService) {}
 
   ngOnInit(): void {
-    this.notesData = this.service.notes.default.data;
+    
+    this.loginData = this.service.currentLogin;
+    this.service.getCurrentNotes();
+    this.notesData = this.service.currentNotesData;
+
   }
 
 }

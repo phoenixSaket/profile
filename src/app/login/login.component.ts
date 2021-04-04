@@ -30,9 +30,10 @@ export class LoginComponent implements OnInit {
     this.service.loginData.default.data.forEach(element => {
       if (this.email === element.email) {
         if (this.password === element.password) {
-          this.errorString = "||     MUBARAKA     ||"; 
           this.isLoginValid = true;
+          this.service.setCurrentLogin(element);
           this.router.navigate(["/notes"]);
+          
         } else {
           this.errorString = "||     AALA     MOTHA     SHAHANA     ||"; 
           this.isLoginValid = false;

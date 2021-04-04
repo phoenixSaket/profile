@@ -11,7 +11,7 @@
 }
 
 input.mat-input-element.mat-form-field-autofill-control {
-    text-align: center;
+    /* text-align: center; */
     height: 20px;
 }
 
@@ -29,6 +29,9 @@ input.mat-input-element.mat-form-field-autofill-control {
 
 input[type="color"] {
     height: 40px  !important;
+    border:none !important;
+    border-color: transparent !important;
+    outline: none !important;
 }
 
 .font-size-selector {
@@ -44,7 +47,7 @@ input[type="color"] {
 }
 
 .colored {
-    color: rgb(237,215,142);
+    color:#e8cc6e;
 }
 
 .bg-colored {
@@ -53,4 +56,58 @@ input[type="color"] {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: white;
+}
+
+.width-fit {
+    width: fit-content;
+}
+
+.tag {
+    padding: 10px;
+    background-color: #e8cc6e;
+    margin: 5px 5px 5px 0px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: tomato;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.add-tag {
+    height: fit-content;
+}
+
+
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .notOnMobile {
+        display: none !important;
+    }
+
+    .onlyOnMobile {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 768px) {
+    .notOnMobile {
+        display: flex !important;
+    }
+
+    .onlyOnMobile {
+        display: none;
+    }
 }

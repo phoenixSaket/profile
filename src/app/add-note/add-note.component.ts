@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { NotesServiceService } from '../notes-service.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-add-note',
@@ -13,7 +14,7 @@ export class AddNoteComponent implements OnInit {
 
   public Editor = ClassicEditor;
 
-  editor:any = {
+  editor: any = {
     data: "Add your content here !"
   }
 
@@ -23,12 +24,13 @@ export class AddNoteComponent implements OnInit {
   fontFamily: string;
   colorCtr = new FormControl('');
   selectedFont = 'Cabin';
+  tags: any[] = [];
 
   fontArray: string[] = [
     "Cabin",
-    "Inconsolata", 
+    "Inconsolata",
     "Kiwi Maru",
-    "Merriweather", 
+    "Merriweather",
     "Nunito",
     "Nunito Sans",
     "Open Sans",
@@ -49,7 +51,7 @@ export class AddNoteComponent implements OnInit {
     textColor: "",
     backgroundColor: "",
     fontFamily: "",
-    fontSize: "",
+    fontSize: 15,
     links: "",
     tags: [],
     images: []
@@ -97,10 +99,34 @@ export class AddNoteComponent implements OnInit {
     this.data.fontSize = event.target.value;
   }
 
-  submitData() {
+  addToTags(event) {
+    let check = 0;
+    this.tags.forEach(element => {
+      if(element === event.target.value.trim()) {
+        check = 1;
+      }
+    });
+
+    if(check == 0) {
+      this.tags.push(event.target.value);
+    }
+  }
+
+
+  removeFromTags(tag) {
     
+    for (let i = this.tags.indexOf(tag); i < this.tags.length; i++) {
+      if (i + 1 === this.tags.length) {
+        this.tags.pop();
+      } else {
+        this.tags[i] = this.tags[i + 1];        
+      }
+    }
+
+  }
+
+  submitData() {
     this.data.content = this.editor.data;
-    console.log(this.editor.data);
     this.data.fontFamily = this.selectedFont;
     this.data.backgroundColor = this.backgroundColor;
     this.data.textColor = this.textColor;
