@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 const Components = [
@@ -20,6 +21,7 @@ const Components = [
   MatSidenavModule,
   MatSnackBarModule,
   MatSelectModule,
+  MatSlideToggleModule,
 ];
 
 @NgModule({
