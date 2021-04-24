@@ -1,49 +1,71 @@
-<div class="note shadow padding20 margin20 d-flex flex-column justify-content-between"
-    [style.fontFamily]="note.fontFamily" [style.color]="note.textColor" [style.backgroundColor]="note.backgroundColor">
-    <div class="top-container text-center w-100 ">
-        <div class="title-container">
-            <span class="title">
+<div class="show-note" *ngIf="!this.editing">
+    <div class="note shadow padding20 d-flex flex-column justify-content-between" [style.fontFamily]="note.fontFamily" [style.color]="note.textColor" [style.backgroundColor]="note.backgroundColor">
+        <div class="top-container text-center w-100 ">
+            <div class="settings d-flex w-100 justify-content-end ">
+                <div class="icon-container d-flex">
+
+                    <div class="other-icons non-active-settings" [ngClass]="this.settingsClicked ? 'show-settings' : 'hide-settings'">
+                        <span class="material-icons pointer" (click)="editClick()">
+                        edit
+                    </span>
+                        <span class="material-icons pointer" (click)="deleteClick()">
+                        delete
+                    </span>
+                    </div>
+
+                    <span class="material-icons pointer active-settings" [ngClass]="this.settingsClicked ? 'rotate' : 'anti-rotate'" (click)="settingsClick()">
+                    settings
+                </span>
+
+                </div>
+            </div>
+            <div class="title-container">
+                <span class="title">
                 {{note.title}}
             </span>
-        </div>
-        <div class="subtitle-container">
-            <span class="subtitle">
+            </div>
+            <div class="subtitle-container">
+                <span class="subtitle">
                 {{note.subtitle}}
             </span>
+            </div>
         </div>
-    </div>
 
-    <div class="middle-container" [style.fontSize]="note.fontSize">
-        <span>Content : </span>
-        <div class="content-container">
-            <!-- {{this.shortContent}} -->
-            <div [innerHTML] ="this.shortContent"></div>
-            <div class="more-less-container w-100 d-flex justify-content-end">
-                <div class="bold-italic" (click)="toggleShortContent()" *ngIf="this.contentShortened && this.contentLength">Show More</div>
-                <div class="bold-italic" (click)="toggleShortContent()" *ngIf="!this.contentShortened && this.contentLength">Show Less</div>
+        <div class="middle-container" [style.fontSize]="note.fontSize">
+            <div class="content-container">
+                <!-- {{this.shortContent}} -->
+                <div [innerHTML]="this.shortContent"></div>
+                <div class="more-less-container w-100 d-flex justify-content-end">
+                    <div class="bold-italic pointer" (click)="toggleShortContent()" *ngIf="this.contentShortened && this.contentLength">Show More</div>
+                    <div class="bold-italic pointer" (click)="toggleShortContent()" *ngIf="!this.contentShortened && this.contentLength">Show Less</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-container">
+            <span *ngIf="note.links.length > 0">Links : </span>
+            <div class="link-container w-100 d-flex wrap justify-content-center align-items-center">
+                <div *ngFor="let link of note.links" class="link w-100">
+                    <a [href]="link">{{link}}</a>
+                </div>
+            </div>
+
+            <span *ngIf="note.tags.length > 0">Tags : </span>
+            <div class="tag-container w-100 d-flex wrap justify-content-start">
+                <div *ngFor="let tag of note.tags" class="tag width-fit">
+                    {{tag}}
+                </div>
+            </div>
+
+            <div class="date-container w-100 d-flex justify-content-end">
+                <div class="date">
+                    {{note.date}}
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="bottom-container">
-        <span *ngIf="note.links.length > 0">Links : </span>
-        <div class="link-container w-100 d-flex wrap justify-content-center align-items-center">
-            <div *ngFor="let link of note.links" class="link w-100">
-                <a [href]="link">{{link}}</a>
-            </div>
-        </div>
-
-        <span *ngIf="note.tags.length > 0">Tags : </span>
-        <div class="tag-container w-100 d-flex wrap justify-content-start">
-            <div *ngFor="let tag of note.tags" class="tag width-fit">
-                {{tag}}
-            </div>
-        </div>
-
-        <div class="date-container w-100 d-flex justify-content-end">
-            <div class="date">
-                {{note.date}}
-            </div>
-        </div>
-    </div>
+<div class="edit-note" *ngIf="this.editing">
+    <app-edit-note [note]="note"></app-edit-note>
 </div>

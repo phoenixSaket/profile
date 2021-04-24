@@ -18,26 +18,66 @@
     font-family: 'Ubuntu', sans-serif;
 } */
 
+.font-family-Inconsolata {
+    font-family: 'Inconsolata', monospace;
+}
 
-.font-family-Inconsolata {font-family: 'Inconsolata', monospace;}
-.font-family-KiwiMaru { font-family: 'Kiwi Maru', serif;}
-.font-family-Merriweather { font-family: 'Merriweather', serif;}
-.font-family-Nunito {font-family: 'Nunito', sans-serif;}
-.font-family-NunitoSans {font-family: 'Nunito Sans', sans-serif;}
-.font-family-OpenSans {font-family: 'Open Sans', sans-serif;}
-.font-family-Raleway { font-family: 'Raleway', sans-serif;}
-.font-family-Roboto {font-family: 'Roboto', sans-serif;}
-.font-family-RobotoSlab {font-family: 'Roboto Slab', serif;}
-.font-family-Rubik { font-family: 'Rubik', sans-serif;}
-.font-family-SourceCodePro {font-family: 'Source Code Pro', monospace;}
-.font-family-Ubuntu { font-family: 'Ubuntu', sans-serif;}
-.font-family-Cabin {font-family: "Cabin", sans-serif;}
+.font-family-KiwiMaru {
+    font-family: 'Kiwi Maru', serif;
+}
 
+.font-family-Merriweather {
+    font-family: 'Merriweather', serif;
+}
 
-html, body { height: 100%; }
-body { 
+.font-family-Nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+.font-family-NunitoSans {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.font-family-OpenSans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.font-family-Raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.font-family-Roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-family-RobotoSlab {
+    font-family: 'Roboto Slab', serif;
+}
+
+.font-family-Rubik {
+    font-family: 'Rubik', sans-serif;
+}
+
+.font-family-SourceCodePro {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.font-family-Ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.font-family-Cabin {
+    font-family: "Cabin", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
     margin: 0;
-    font-family: "Cabin", sans-serif  !important;
+    font-family: "Cabin", sans-serif !important;
     background-image: url("https://raw.githubusercontent.com/phoenixSaket/lekhaverma/master/src/Images/BG.png");
     background-position: center;
     background-attachment: fixed;
@@ -47,8 +87,8 @@ body {
     background-color: white;
 }
 
-.main-container{
-    font-family: "Cabin"  !important;
+.main-container {
+    font-family: "Cabin" !important;
     width: 100%;
 }
 
@@ -76,11 +116,11 @@ body {
     height: 100vh;
 }
 
-.margin-bottom-20 { 
+.margin-bottom-20 {
     margin-bottom: 20px;
 }
 
-.margin-bottom-10 { 
+.margin-bottom-10 {
     margin-bottom: 10px;
 }
 
@@ -89,7 +129,7 @@ body {
 }
 
 .invalid {
-    color:tomato;
+    color: tomato;
 }
 
 .circle {
@@ -104,12 +144,14 @@ body {
 .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
     border-color: white !important;
     border: white !important;
-    box-shadow: var(--ck-inner-shadow),0 0;
+    box-shadow: var(--ck-inner-shadow), 0 0;
 }
+
 
 /* .ck.ck-toolbar>.ck-toolbar__items {
     justify-content: center !important;
 } */
+
 .ck.ck-reset.ck-editor.ck-rounded-corners {
     border: 4px solid #caf0ff;
 }
@@ -124,4 +166,12 @@ body {
 
 .mat-raised-button.mat-custom {
     background-color: #e8cc6e;
+}
+
+.edit-note .ck.ck-reset.ck-editor.ck-rounded-corners {
+    border: none !important;
+}
+
+.edit-note .ck.ck-sticky-panel {
+    background-color: unset !important;
 }

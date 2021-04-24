@@ -12,6 +12,8 @@ export class NoteComponent implements OnInit {
   shortContent: string = "";
   contentShortened: boolean = false;
   contentLength: boolean = false;
+  settingsClicked: boolean = false;
+  editing: boolean = false;
 
   constructor() { }
 
@@ -45,6 +47,20 @@ export class NoteComponent implements OnInit {
     } else {
       this.shortenContent();
     }
+  }
+
+  settingsClick() {
+    this.settingsClicked = !this.settingsClicked;
+  }
+
+  editClick() {
+    if(!this.editing) {
+      this.editing = true;
+    }
+  }
+
+  deleteClick() {
+
   }
 
 }

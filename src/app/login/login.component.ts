@@ -35,11 +35,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate(["/notes"]);
           
         } else {
-          this.errorString = "||     AALA     MOTHA     SHAHANA     ||"; 
+          this.errorString = "||    INVALID CREDENTIALS     ||"; 
           this.isLoginValid = false;
         }
       } else {
-          this.errorString = "||     AALA  MOTHA  SHAHANA     ||";
+          this.errorString = "||     INVALID CREDENTIALS     ||";
           this.isLoginValid = false;
         }
       }

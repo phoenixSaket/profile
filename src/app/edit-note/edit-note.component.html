@@ -1,36 +1,21 @@
-<div mat-button-icon class="note bg-colored shadow padding20 flex-column justify-content-center align-items-center text-center font-size-25 pointer notOnMobile" *ngIf="!addNote" (click)="toggleAddNote()">
-    <span class="material-icons circle font-70 colored">
-        add_circle
-    </span>
-</div>
-
-<div class="onlyOnMobile shadow">
-    <span class="material-icons circle font-70 colored shadow" *ngIf="!addNote" (click)="toggleAddNote()">
-        add_circle
-    </span>
-</div>
-
-<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-center" *ngIf="addNote">
+<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-center" [style.backgroundColor]="this.note.backgroundColor">
 
     <mat-form-field class="w-100 d-flex flex-column justify-content-center">
-        <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)">
+        <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)" [value]="this.note.title">
     </mat-form-field>
 
+
     <mat-form-field class="w-100 d-flex flex-column justify-content-center">
-        <input matInput type="text" placeholder="Subtitle" (change)="updateValueSubtitle($event)">
+        <input matInput type="text" placeholder="Subtitle" (change)="updateValueSubtitle($event)" [value]="this.note.subtitle">
     </mat-form-field>
+
 
     <div class="w-100 margin-bottom-5">
-        <ckeditor [editor]="Editor" [config]="{ toolbar: [  'bold', 'italic' , '|', 'link', '|' , 'bulletedList', 'numberedList', '|' , 'undo', 'redo' ] }" [(data)]="this.editor.data" (change)="updateContent($event)"></ckeditor>
+        <ckeditor [editor]="Editor" [config]="{ toolbar: [  'bold', 'italic' , '|', 'link', '|' , 'bulletedList', 'numberedList', '|' , 'undo', 'redo' ] }" [(data)]="this.note.content" (change)="updateContent($event)"></ckeditor>
     </div>
 
     <div class="w-100 d-flex justify-content-between align-items-center margin-bottom-10">
         <span>Advanced Settings</span>
-        <!-- <span class="material-icons cursor font-size-50" (click)="toggleAdvancedSettings()"
-            [innerHTML]="this.showAdvancedSettings ? 'toggle_on' : 'toggle_off'"
-            [style.color]="this.showAdvancedSettings ? 'blue' : 'gray'"
-            >
-        </span> -->
         <mat-slide-toggle (click)="toggleAdvancedSettings()" color="custom"></mat-slide-toggle>
     </div>
 
@@ -102,5 +87,6 @@
         </div>
     </div>
 
-    <button mat-raised-button color="primary" (click)="submitData()">Add to Notes</button>
+    <button mat-raised-button color="primary" (click)="submitData()">Save</button>
+    <button mat-raised-button color="primary">Cancel</button>
 </div>

@@ -10,6 +10,7 @@ import { NotesMainPageComponent } from './notes-main-page/notes-main-page.compon
 import { NoteComponent } from './note/note.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     LoginComponent,
     NotesMainPageComponent,
     NoteComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,

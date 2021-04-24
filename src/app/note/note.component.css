@@ -1,8 +1,6 @@
 .note {
-    min-width: 380px;
-    max-width: 380px;
-    min-height: 250px;
-    width: fit-content;
+    height: 100%;
+    width: 100%;
 }
 
 .border-bottom {
@@ -11,7 +9,6 @@
 
 .bold-italic {
     font-weight: 800;
-    
 }
 
 .content-container {
@@ -48,19 +45,20 @@
 }
 
 .middle-container {
-    margin-top:15px;
+    margin-top: 15px;
 }
 
 .wrap {
     flex-wrap: wrap;
 }
 
-.tag-container, .link-container {
+.tag-container,
+.link-container {
     margin-bottom: 10px;
 }
 
 .link {
-    padding:10px;
+    padding: 10px;
     background-color: #ffffff60;
     border-radius: 2px;
     cursor: pointer;
@@ -69,4 +67,52 @@
 
 a {
     color: unset !important;
+}
+
+.active-settings {
+    display: block;
+}
+
+.rotate {
+    transform: rotate(-360deg);
+    transition-duration: 1s;
+}
+
+.anti-rotate {
+    transform: rotate(360deg);
+    transition-duration: 1s;
+}
+
+.show-settings {
+    display: block;
+    opacity: 1;
+    animation: show 1s;
+}
+
+.hide-settings {
+    display: none;
+    opacity: 0;
+    animation: hide 1s;
+}
+
+@keyframes show {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    from {
+        display: block;
+        opacity: 1;
+    }
+    to {
+        display: none;
+        opacity: 0;
+    }
 }
