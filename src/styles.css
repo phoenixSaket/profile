@@ -18,6 +18,18 @@
     font-family: 'Ubuntu', sans-serif;
 } */
 
+
+/* 5C2B29
+635D19
+345920
+16504B
+2D555E
+1E3A5F
+42275E
+5B2245
+442F19
+3C3F43 */
+
 .font-family-Inconsolata {
     font-family: 'Inconsolata', monospace;
 }
@@ -70,6 +82,10 @@
     font-family: "Cabin", sans-serif;
 }
 
+* {
+    background: transparent;
+}
+
 html,
 body {
     height: 100%;
@@ -78,13 +94,7 @@ body {
 body {
     margin: 0;
     font-family: "Cabin", sans-serif !important;
-    background-image: url("https://raw.githubusercontent.com/phoenixSaket/lekhaverma/master/src/Images/BG.png");
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-    background-size: cover;
-    background-color: white;
+    background-color: #202124;
 }
 
 .main-container {
@@ -143,8 +153,13 @@ body {
 
 .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
     border-color: white !important;
-    border: white !important;
-    box-shadow: var(--ck-inner-shadow), 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.4) !important;
+    box-shadow: none !important;
+}
+
+.ck.ck-editor__main>.ck-editor__editable {
+    background: transparent !important;
+    border-radius: 0;
 }
 
 
@@ -153,15 +168,36 @@ body {
 } */
 
 .ck.ck-reset.ck-editor.ck-rounded-corners {
-    border: 4px solid #caf0ff;
+    border: none;
 }
 
 .ck-focused {
     border: none !important;
+    box-shadow: none !important;
 }
 
 .ck.ck-sticky-panel {
-    background-color: #caf0ff !important;
+    background-color: transparent !important;
+    color: #E8EAED;
+}
+
+svg.ck.ck-icon.ck-button__icon {
+    color: #E8EAED !important;
+}
+
+.ck.ck-button.ck-on,
+a.ck.ck-button.ck-on {
+    background: #00000060 !important;
+}
+
+.ck.ck-button.ck-on:not(.ck-disabled):hover,
+a.ck.ck-button.ck-on:not(.ck-disabled):hover {
+    background: #00000060 !important;
+}
+
+.ck.ck-button:not(.ck-disabled):hover,
+a.ck.ck-button:not(.ck-disabled):hover {
+    background: #00000060 !important;
 }
 
 .mat-raised-button.mat-custom {
@@ -174,4 +210,32 @@ body {
 
 .edit-note .ck.ck-sticky-panel {
     background-color: unset !important;
+}
+
+.ck.ck-sticky-panel__content {
+    display: flex;
+    justify-content: center;
+}
+
+.login-container {
+    background-color: #202124;
+    color: #E8EAED;
+    background-image: url(https://besthqwallpapers.com/Uploads/17-12-2017/33649/4k-abstract-waves-creative-dark-background-material-design.jpg);
+    background-position: center;
+    background-position: center;
+    background-attachment: fixed;
+    background-origin: border-box;
+    background-origin: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: color-dodge;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.w-60 {
+    width: 60% !important;
 }

@@ -10,7 +10,7 @@
     </span>
 </div>
 
-<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-center" *ngIf="addNote">
+<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-center" *ngIf="addNote" [style.backgroundColor]="this.backgroundColor">
 
     <mat-form-field class="w-100 d-flex flex-column justify-content-center">
         <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)">
@@ -36,17 +36,22 @@
 
     <div class="advanced-container" *ngIf="this.showAdvancedSettings">
         <div class="color-container w-100 d-flex justify-content-between">
-            <mat-form-field class="w-50 d-flex flex-column justify-content-center">
+            <!-- <mat-form-field class="w-50 d-flex flex-column justify-content-center">
                 <input matInput type="color" [value]="this.backgroundColor" (change)="updateBGColor($event)" placeholder="Background Color">
             </mat-form-field>
 
             <mat-form-field class="w-50 d-flex flex-column justify-content-center">
                 <input matInput type="color" [value]="this.textColor" (change)="updateColor($event)" placeholder="Text Color">
-            </mat-form-field>
+            </mat-form-field> -->
+            <div class="background-color-selector w-100 margin-bottom-10">
+                <div class="bg-color" *ngFor="let color of this.bgColor">
+                    <div class="color-circle" (click)="updateBGColor(color)" [style.backgroundColor]="color"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="font-container w-100 d-flex justify-content-between">
-            <mat-form-field class="w-70 d-flex flex-column justify-content-center">
+        <div class="font-container w-100 d-flex justify-content-between ">
+            <mat-form-field class="w-100 d-flex flex-column justify-content-center">
                 <mat-label>Select you font of choice</mat-label>
                 <mat-select [(value)]="selectedFont">
                     <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">
@@ -54,18 +59,18 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field id="font-size-selector" class="font-size-selector w-25 d-flex flex-column justify-content-center">
+            <!-- <mat-form-field id="font-size-selector" class="font-size-selector w-25 d-flex flex-column justify-content-center">
                 <mat-label>Font Size</mat-label>
                 <input matInput type="number" value="15" (change)="updateFontSize($event)">
-            </mat-form-field>
+            </mat-form-field> -->
         </div>
 
         <div class="tags-adder-container d-flex align-items-center justify-content-between">
-            <mat-form-field class="w-75 d-flex flex-column justify-content-center">
+            <mat-form-field class="w-60 d-flex flex-column justify-content-center">
                 <mat-label>Tags</mat-label>
                 <input #tag matInput type="text" (change)="addToTags($event); tag.value= ''">
             </mat-form-field>
-            <button mat-raised-button class="add-tag w-25" color="custom">Add tag</button>
+            <button mat-raised-button class="add-tag" color="custom">Add tag</button>
         </div>
 
         <div class="tags-container d-flex wrap">
@@ -80,21 +85,21 @@
         </div>
 
         <div class="tags-adder-container d-flex align-items-center justify-content-between">
-            <mat-form-field class="w-75 d-flex flex-column justify-content-center">
+            <mat-form-field class="w-60 d-flex flex-column justify-content-center">
                 <mat-label>Links</mat-label>
                 <input #link matInput type="text" (change)="addToLinks($event); link.value= ''">
             </mat-form-field>
-            <button mat-raised-button class="w-25 add-tag" color="custom">Add link</button>
+            <button mat-raised-button class=" add-tag" color="custom">Add link</button>
         </div>
         <span class="invalid" *ngIf="this.linkError.length > 0">
             {{this.linkError}}
         </span>
 
         <div class="tags-container d-flex wrap">
-            <div *ngFor="let link of this.links" class="tag w-100 ">
-                <div class="w-100 d-flex justify-content-between align-items-center">
-                    <span class="link">{{link}}</span>
-                    <span class="material-icons cancel-button" (click)="removeFromLinks(link)">
+            <div *ngFor="let link of this.links" class="w-100 ">
+                <div class="w-100 d-flex justify-content-between align-items-cente link-cancel">
+                    <span class="link w-100">{{link}}</span>
+                    <span class="material-icons cancel-button pointer" (click)="removeFromLinks(link)">
                         cancel
                     </span>
                 </div>

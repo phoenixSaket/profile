@@ -20,8 +20,8 @@ export class AddNoteComponent implements OnInit {
   }
 
   addNote: boolean = false;
-  backgroundColor: string = "#1ff0ff";
-  textColor: string = "#454448";
+  backgroundColor: string = "#3C3F43";
+  textColor: string = "#E8EAED";
   fontFamily: string;
   colorCtr = new FormControl('');
   selectedFont = 'Cabin';
@@ -61,6 +61,8 @@ export class AddNoteComponent implements OnInit {
   linkError: string = "";
   showAdvancedSettings: any;
 
+  bgColor = ["5C2B29", "635D19", "345920", "16504B", "2D555E", "1E3A5F", "42275E", "5B2245", "442F19", "3C3F43"]
+
   constructor(private service: NotesServiceService, private router: Router) { }
 
   ngOnInit(): void {
@@ -72,10 +74,10 @@ export class AddNoteComponent implements OnInit {
     this.textColor = event.target.value;
   }
 
-  updateBGColor(event) {
-    this.data.backgroundColor = event.target.value;
-    this.backgroundColor = event.target.value;
-    console.log(event.target.value);
+  updateBGColor(color) {
+    this.data.backgroundColor = color;
+    this.backgroundColor = color;
+    console.log(color);
   }
 
   toggleAddNote() {

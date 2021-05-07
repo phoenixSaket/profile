@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormControl } from '@angular/forms';
 import { NotesServiceService } from '../notes-service.service';
@@ -13,6 +13,8 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular';
 export class EditNoteComponent implements OnInit {
 
   @Input() note: any;
+  @Output() cancelNote: EventEmitter<any> = new EventEmitter();
+
   public Editor = ClassicEditor;
 
   editor: any = {
@@ -64,7 +66,22 @@ export class EditNoteComponent implements OnInit {
   constructor(private service: NotesServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.note)
+    console.log(this.note);
+    this.data.title = this.note.title ? this.note.title : "";
+    this.data.author = this.note.author ? this.note.author : "";
+    this.data.backgroundColor = this.note.backgroundColor ? this.note.backgroundColor : "";
+    this.data.content = this.note.content ? this.note.content : "";
+    this.data.date = this.note.date ? this.note.date : "";
+    this.data.fontFamily = this.note.fontFamily ? this.note.fontFamily : "";
+    this.data.fontSize = this.note.fontSize ? this.note.fontSize : "";
+    this.data.images = this.note.images ? this.note.images : [];
+    this.data.subtitle = this.note.subtitle ? this.note.subtitle : "";
+    this.data.tags = this.note.tags ? this.note.tags : [];
+    this.data.links = this.note.links ? this.note.links : [];
+    this.data.textColor = this.note.textColor ? this.note.textColor : "";
+    this.editor.data = this.data.content;
+    console.log(this.data);
+    
   }
 
   updateColor(event) {
@@ -174,5 +191,9 @@ export class EditNoteComponent implements OnInit {
     this.service.addtoNotes(this.data);
     this.data = {};
     this.addNote = false;
+  }
+
+  cancelEdit() {
+    this.cancelNote.emit(false);
   }
 }

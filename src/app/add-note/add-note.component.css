@@ -1,7 +1,13 @@
 .note {
     width: 100%;
     height: 100%;
-    min-height: 300px;
+    min-height: 450px;
+    border-radius: 15px;
+    color: #E8EAED;
+}
+
+input[type="text"] {
+    color: #E8EAED;
 }
 
 .bold-italic {
@@ -58,11 +64,8 @@ input[type="color"] {
 }
 
 .bg-colored {
-    background-image: url("https://raw.githubusercontent.com/phoenixSaket/saketVerma/master/saketverma/src/Images/BG_new.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
+    background-color: #3C3F43;
+    /* background-color: white; */
 }
 
 .width-fit {
@@ -71,21 +74,42 @@ input[type="color"] {
 
 .tag {
     padding: 10px;
-    background-color: #e8cc6e;
+    background-color: #ffffff60;
     margin: 5px 5px 5px 0px;
-    border-radius: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link {
+    padding: 10px;
+    background-color: #ffffff60;
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .cancel-button {
     display: none;
+    align-self: center;
+}
+
+.link .cancel-button {
+    display: none;
 }
 
 .tag:hover {
-    background-color: #ffb5a7;
+    background-color: #ff00a760;
 }
 
 .tag:hover .cancel-button {
+    display: block;
+}
+
+.link:hover {
+    background-color: #ff00a760;
+}
+
+.link-cancel:hover .cancel-button {
     display: block;
 }
 
@@ -124,4 +148,18 @@ input[type="color"] {
     .onlyOnMobile {
         display: none;
     }
+}
+
+.background-color-selector {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-circle {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px black;
 }

@@ -63,4 +63,8 @@ export class NoteComponent implements OnInit {
 
   }
 
+  cancelEditing($event) {
+    this.editing = false;
+  }
+
 }

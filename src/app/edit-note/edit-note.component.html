@@ -21,13 +21,18 @@
 
     <div class="advanced-container" *ngIf="this.showAdvancedSettings">
         <div class="color-container w-100 d-flex justify-content-between">
-            <mat-form-field class="w-50 d-flex flex-column justify-content-center">
+            <!-- <mat-form-field class="w-50 d-flex flex-column justify-content-center">
                 <input matInput type="color" [value]="this.backgroundColor" (change)="updateBGColor($event)" placeholder="Background Color">
             </mat-form-field>
 
             <mat-form-field class="w-50 d-flex flex-column justify-content-center">
                 <input matInput type="color" [value]="this.textColor" (change)="updateColor($event)" placeholder="Text Color">
-            </mat-form-field>
+            </mat-form-field> -->
+            <div class="background-color-selector w-100 margin-bottom-10">
+                <div class="bg-color" *ngFor="let color of this.bgColor">
+                    <div class="color-circle" (click)="updateBGColor(color)" [style.backgroundColor]="color"></div>
+                </div>
+            </div>
         </div>
 
         <div class="font-container w-100 d-flex justify-content-between">
@@ -39,10 +44,10 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field id="font-size-selector" class="font-size-selector w-25 d-flex flex-column justify-content-center">
+            <!-- <mat-form-field id="font-size-selector" class="font-size-selector w-25 d-flex flex-column justify-content-center">
                 <mat-label>Font Size</mat-label>
                 <input matInput type="number" value="15" (change)="updateFontSize($event)">
-            </mat-form-field>
+            </mat-form-field> -->
         </div>
 
         <div class="tags-adder-container d-flex align-items-center justify-content-between">
@@ -88,5 +93,5 @@
     </div>
 
     <button mat-raised-button color="primary" (click)="submitData()">Save</button>
-    <button mat-raised-button color="primary">Cancel</button>
+    <button mat-raised-button color="primary" (click)="cancelEdit()">Cancel</button>
 </div>

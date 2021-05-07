@@ -1,16 +1,14 @@
 {
-    "data": [
-        {
+    "data": [{
             "userId": "1",
-            "data": [
-                {
+            "data": [{
                     "title": "Discrimination",
                     "subtitle": "Men should be conmsidered equals too",
                     "content": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
                     "date": "30-03-2021",
                     "author": "",
                     "textColor": "#000000",
-                    "backgroundColor": "#ffafbf",
+                    "backgroundColor": "#5C2B29",
                     "fontFamily": "Consolas",
                     "fontSize": "",
                     "links": "",
@@ -24,7 +22,7 @@
                     "date": "30-03-2021",
                     "author": "",
                     "textColor": "#000000",
-                    "backgroundColor": "#affdff",
+                    "backgroundColor": "#635D19",
                     "fontFamily": "",
                     "fontSize": "",
                     "links": "",
@@ -38,7 +36,7 @@
                     "date": "30-03-2021",
                     "author": "",
                     "textColor": "#457435",
-                    "backgroundColor": "#1ff0ff",
+                    "backgroundColor": "#345920",
                     "fontFamily": "",
                     "fontSize": "15px",
                     "links": "",
@@ -52,7 +50,7 @@
                     "date": "30-03-2021",
                     "author": "",
                     "textColor": "#0a0040",
-                    "backgroundColor": "#f4f2ff",
+                    "backgroundColor": "#16504B",
                     "fontFamily": "Roboto",
                     "fontSize": "15px",
                     "links": "",
@@ -63,15 +61,14 @@
         },
         {
             "userId": "2",
-            "data": [
-                {
+            "data": [{
                     "title": "Welcome",
                     "subtitle": "Welcome to Notes keeper",
                     "content": "Your content goes here",
                     "date": "30-03-2021",
                     "author": "Your Name",
                     "textColor": "#000000",
-                    "backgroundColor": "#ffafbf",
+                    "backgroundColor": "#2D555E",
                     "fontFamily": "",
                     "fontSize": "",
                     "links": "",
@@ -85,7 +82,7 @@
                     "date": "30-03-2021",
                     "author": "",
                     "textColor": "#000000",
-                    "backgroundColor": "#affdff",
+                    "backgroundColor": "#1E3A5F",
                     "fontFamily": "",
                     "fontSize": "",
                     "links": ["https://web.whatsapp.com/"],
@@ -99,7 +96,7 @@
                     "date": "30-03-2021",
                     "author": "",
                     "textColor": "#457435",
-                    "backgroundColor": "#1ff0ff",
+                    "backgroundColor": "#42275E",
                     "fontFamily": "",
                     "fontSize": "15px",
                     "links": "",
@@ -108,6 +105,6 @@
                 }
             ]
         }
-        
+
     ]
 }
