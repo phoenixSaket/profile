@@ -11,6 +11,7 @@ import { NoteComponent } from './note/note.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditNoteComponent } from './edit-note/edit-note.component';
+import { InputTextComponent } from './shared/input-text/input-text.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditNoteComponent } from './edit-note/edit-note.component';
     NotesMainPageComponent,
     NoteComponent,
     AddNoteComponent,
-    EditNoteComponent
+    EditNoteComponent,
+    InputTextComponent
   ],
   imports: [
     BrowserModule,

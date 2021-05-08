@@ -1,33 +1,31 @@
-<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-center" [style.backgroundColor]="this.note.backgroundColor">
+<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-between" [style.backgroundColor]="this.note.backgroundColor">
 
-    <mat-form-field class="w-100 d-flex flex-column justify-content-center">
+    <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center">
         <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)" [value]="this.note.title">
-    </mat-form-field>
+    </mat-form-field> -->
 
+    <app-input-text [value]="this.note.title" placeholder="Subtitle" hasborder="true" label="Title" [labelBackground]="this.note.backgroundColor" (insertedValue)="updateValueTitle($event)"></app-input-text>
 
-    <mat-form-field class="w-100 d-flex flex-column justify-content-center">
+    <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center">
         <input matInput type="text" placeholder="Subtitle" (change)="updateValueSubtitle($event)" [value]="this.note.subtitle">
-    </mat-form-field>
+    </mat-form-field> -->
 
 
-    <div class="w-100 margin-bottom-5">
+    <app-input-text [value]="this.note.subtitle" placeholder="Subtitle" hasborder="true" label="Subtitle" [labelBackground]="this.note.backgroundColor" (insertedValue)="updateValueSubtitle($event)"></app-input-text>
+
+    <div class="w-100 margin-bottom-5 editor-container">
+        <span class="editor-label" [style.backgroundColor]="this.note.backgroundColor">Content</span>
         <ckeditor [editor]="Editor" [config]="{ toolbar: [  'bold', 'italic' , '|', 'link', '|' , 'bulletedList', 'numberedList', '|' , 'undo', 'redo' ] }" [(data)]="this.note.content" (change)="updateContent($event)"></ckeditor>
     </div>
 
-    <div class="w-100 d-flex justify-content-between align-items-center margin-bottom-10">
+    <div class="w-100 d-flex justify-content-between align-items-center margin-bottom-10 margin-top-20">
         <span>Advanced Settings</span>
         <mat-slide-toggle (click)="toggleAdvancedSettings()" color="custom"></mat-slide-toggle>
     </div>
 
     <div class="advanced-container" *ngIf="this.showAdvancedSettings">
+        <span class="color-label" [style.backgroundColor]="this.note.backgroundColor">Background Color</span>
         <div class="color-container w-100 d-flex justify-content-between">
-            <!-- <mat-form-field class="w-50 d-flex flex-column justify-content-center">
-                <input matInput type="color" [value]="this.backgroundColor" (change)="updateBGColor($event)" placeholder="Background Color">
-            </mat-form-field>
-
-            <mat-form-field class="w-50 d-flex flex-column justify-content-center">
-                <input matInput type="color" [value]="this.textColor" (change)="updateColor($event)" placeholder="Text Color">
-            </mat-form-field> -->
             <div class="background-color-selector w-100 margin-bottom-10">
                 <div class="bg-color" *ngFor="let color of this.bgColor">
                     <div class="color-circle" (click)="updateBGColor(color)" [style.backgroundColor]="color"></div>
@@ -36,7 +34,7 @@
         </div>
 
         <div class="font-container w-100 d-flex justify-content-between">
-            <mat-form-field class="w-70 d-flex flex-column justify-content-center">
+            <mat-form-field class="w-100 d-flex flex-column justify-content-center">
                 <mat-label>Select you font of choice</mat-label>
                 <mat-select [(value)]="selectedFont">
                     <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">

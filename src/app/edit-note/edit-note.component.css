@@ -1,0 +1,47 @@
+.background-color-selector {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-circle {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+.editor-container {
+    border-radius: 10px;
+    border: 1px solid #E8EAED;
+    margin-top: 20px;
+}
+
+.editor-label {
+    position: relative;
+    top: -9px;
+    left: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: smaller;
+}
+
+.color-label {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: smaller;
+}
+
+.background-color-selector {
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 1px solid #E8EAED;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}

@@ -61,7 +61,7 @@ export class AddNoteComponent implements OnInit {
   linkError: string = "";
   showAdvancedSettings: any;
 
-  bgColor = ["5C2B29", "635D19", "345920", "16504B", "2D555E", "1E3A5F", "42275E", "5B2245", "442F19", "3C3F43"]
+  bgColor = ["5C2B29", "635D19", "345920", "16504B", "2D555E", "1E3A5F", "42275E", "5B2245", "442F19", "3C3F43"];
 
   constructor(private service: NotesServiceService, private router: Router) { }
 

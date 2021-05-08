@@ -10,7 +10,7 @@
     </span>
 </div>
 
-<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-center" *ngIf="addNote" [style.backgroundColor]="this.backgroundColor">
+<div class="note bg-colored shadow padding20 d-flex flex-column justify-content-between" *ngIf="addNote" [style.backgroundColor]="this.backgroundColor">
 
     <mat-form-field class="w-100 d-flex flex-column justify-content-center">
         <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)">

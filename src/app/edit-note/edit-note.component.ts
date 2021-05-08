@@ -22,8 +22,8 @@ export class EditNoteComponent implements OnInit {
   }
 
   addNote: boolean = false;
-  backgroundColor: string = "#1ff0ff";
-  textColor: string = "#454448";
+  backgroundColor: string;
+  textColor: string;
   fontFamily: string;
   colorCtr = new FormControl('');
   selectedFont = 'Cabin';
@@ -62,6 +62,8 @@ export class EditNoteComponent implements OnInit {
   }
   linkError: string = "";
   showAdvancedSettings: any;
+  bgColor = ["5C2B29", "635D19", "345920", "16504B", "2D555E", "1E3A5F", "42275E", "5B2245", "442F19", "3C3F43"];
+
 
   constructor(private service: NotesServiceService, private router: Router) { }
 
@@ -90,9 +92,10 @@ export class EditNoteComponent implements OnInit {
   }
 
   updateBGColor(event) {
-    this.data.backgroundColor = event.target.value;
-    this.backgroundColor = event.target.value;
-    console.log(event.target.value);
+    this.data.backgroundColor = event;
+    this.note.backgroundColor = event;
+    this.backgroundColor = event;
+    console.log(event);
   }
 
   toggleAddNote() {
@@ -101,11 +104,11 @@ export class EditNoteComponent implements OnInit {
   }
 
   updateValueTitle(event) {
-    this.data.title = event.target.value;
+    this.data.title = event;
   }
 
   updateValueSubtitle(event) {
-    this.data.subtitle = event.target.value;
+    this.data.subtitle = event;
   }
 
   updateValueAuthor(event) {
@@ -196,4 +199,5 @@ export class EditNoteComponent implements OnInit {
   cancelEdit() {
     this.cancelNote.emit(false);
   }
+
 }
