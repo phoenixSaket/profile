@@ -119,3 +119,11 @@ a {
         opacity: 0;
     }
 }
+
+.space {
+    margin: 0px 10px 0 0;
+}
+
+.settings {
+    margin-bottom: 10px;
+}

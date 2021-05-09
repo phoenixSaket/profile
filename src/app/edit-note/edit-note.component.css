@@ -13,7 +13,7 @@
 }
 
 .editor-container {
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #E8EAED;
     margin-top: 20px;
 }
@@ -38,7 +38,7 @@
 
 .background-color-selector {
     padding: 15px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #E8EAED;
 }
 
@@ -48,7 +48,7 @@
 
 .font-container {
     padding: 15px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #E8EAED;
 }
 
@@ -58,4 +58,32 @@
 
 .tag-adder {
     width: 70%;
+}
+
+.tag {
+    padding: 10px;
+    background-color: #ffffff60;
+    margin: 5px 5px 5px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: #ff00a760;
+}
+
+.tag:hover .cancel-button {
+    display: block;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.button-container-bottom .mat-custom {
+    background-color: #E8CC6E !important;
+}
+
+.button-container-bottom {
+    margin-top: 20px;
 }

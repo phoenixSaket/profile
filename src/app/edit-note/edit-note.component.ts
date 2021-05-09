@@ -100,7 +100,6 @@ export class EditNoteComponent implements OnInit {
 
   toggleAddNote() {
     this.addNote = true;
-    this.router.navigate(['#add-note']);
   }
 
   updateValueTitle(event) {

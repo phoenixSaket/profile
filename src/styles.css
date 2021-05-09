@@ -30,6 +30,10 @@
 442F19
 3C3F43 */
 
+.w-28 {
+    width: 28% !important;
+}
+
 .font-family-Inconsolata {
     font-family: 'Inconsolata', monospace;
 }
@@ -229,7 +233,7 @@ a.ck.ck-button:not(.ck-disabled):hover {
     background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode: color-dodge;
+    background-blend-mode: darken;
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
@@ -290,4 +294,12 @@ html {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #E8CC6E;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: #E8CC6Eaa;
 }

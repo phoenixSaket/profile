@@ -1,15 +1,6 @@
 <div class="note bg-colored shadow padding20 d-flex flex-column justify-content-between" [style.backgroundColor]="this.note.backgroundColor">
 
-    <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center">
-        <input matInput type="text" placeholder="Title" (change)="updateValueTitle($event)" [value]="this.note.title">
-    </mat-form-field> -->
-
     <app-input-text [value]="this.note.title" placeholder="Subtitle" hasborder="true" label="Title" [labelBackground]="this.note.backgroundColor" (insertedValue)="updateValueTitle($event)"></app-input-text>
-
-    <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center">
-        <input matInput type="text" placeholder="Subtitle" (change)="updateValueSubtitle($event)" [value]="this.note.subtitle">
-    </mat-form-field> -->
-
 
     <app-input-text [value]="this.note.subtitle" placeholder="Subtitle" hasborder="true" label="Subtitle" [labelBackground]="this.note.backgroundColor" (insertedValue)="updateValueSubtitle($event)"></app-input-text>
 
@@ -20,7 +11,7 @@
 
     <div class="w-100 d-flex justify-content-between align-items-center margin-bottom-10 margin-top-20">
         <span>Advanced Settings</span>
-        <mat-slide-toggle (click)="toggleAdvancedSettings()" color="custom"></mat-slide-toggle>
+        <mat-slide-toggle (click)="toggleAdvancedSettings()" color="custom-slide"></mat-slide-toggle>
     </div>
 
     <div class="advanced-container" *ngIf="this.showAdvancedSettings">
@@ -40,28 +31,12 @@
                     {{font}}
                 </mat-option>
             </mat-select>
-            <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center">
-                <mat-label>Select you font of choice</mat-label>
-                <mat-select [(value)]="selectedFont">
-                    <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">
-                        {{font}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field> -->
-            <!-- <mat-form-field id="font-size-selector" class="font-size-selector w-25 d-flex flex-column justify-content-center">
-                <mat-label>Font Size</mat-label>
-                <input matInput type="number" value="15" (change)="updateFontSize($event)">
-            </mat-form-field> -->
         </div>
 
         <div class="tags-adder-container d-flex align-items-end justify-content-between">
-            <app-input-text class="tag-adder" resetValue=true placeholder="Tag" hasborder="true" label="Tag" [labelBackground]="this.note.backgroundColor" (insertedValue)="addToTags($event)"></app-input-text>
+            <app-input-text class="tag-adder" resetValue=true placeholder="Tag" hasborder="true" label="Add a Tag" [labelBackground]="this.note.backgroundColor" (insertedValue)="addToTags($event)"></app-input-text>
 
-            <!-- <mat-form-field class="w-75 d-flex flex-column justify-content-center">
-                <mat-label>Tags</mat-label>
-                <input #tag matInput type="text" (change)="addToTags($event); tag.value= ''">
-            </mat-form-field> -->
-            <button mat-raised-button class="add-tag w-25" color="custom">Add tag</button>
+            <button mat-raised-button class="add-tag w-28" color="custom">Add tag</button>
         </div>
 
         <div class="tags-container d-flex wrap">
@@ -75,12 +50,10 @@
             </div>
         </div>
 
-        <div class="tags-adder-container d-flex align-items-center justify-content-between">
-            <mat-form-field class="w-75 d-flex flex-column justify-content-center">
-                <mat-label>Links</mat-label>
-                <input #link matInput type="text" (change)="addToLinks($event); link.value= ''">
-            </mat-form-field>
-            <button mat-raised-button class="w-25 add-tag" color="custom">Add link</button>
+        <div class="tags-adder-container d-flex align-items-end justify-content-between">
+            <app-input-text class="tag-adder" resetValue=true placeholder="Link" hasborder="true" label="Add a Link" [labelBackground]="this.note.backgroundColor" (insertedValue)="addToLinks($event)"></app-input-text>
+
+            <button mat-raised-button class="w-28 add-tag" color="custom">Add link</button>
         </div>
         <span class="invalid" *ngIf="this.linkError.length > 0">
             {{this.linkError}}
@@ -98,6 +71,12 @@
         </div>
     </div>
 
-    <button mat-raised-button color="primary" (click)="submitData()">Save</button>
-    <button mat-raised-button color="primary" (click)="cancelEdit()">Cancel</button>
+    <div class="button-container-bottom d-flex justify-content-around">
+        <button mat-fab color="custom" aria-label="Save the note" (click)="submitData()">
+        <span class="material-icons">done</span>
+      </button>
+        <button mat-fab color="custom" aria-label="Cancel Editing" (click)="cancelEdit()">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
 </div>

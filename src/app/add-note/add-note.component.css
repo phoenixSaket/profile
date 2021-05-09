@@ -60,7 +60,7 @@ input[type="color"] {
 
 .colored {
     /* color: #e8cc6e; */
-    color: #e84b6a
+    color: #E8CC6E;
 }
 
 .bg-colored {
@@ -134,7 +134,6 @@ input[type="color"] {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: white;
         border-radius: 50%;
         opacity: 1;
         cursor: pointer;
@@ -162,4 +161,102 @@ input[type="color"] {
     margin: 3px;
     border-radius: 50%;
     box-shadow: 0px 0px 5px 0px black;
+}
+
+.background-color-selector {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-circle {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+.editor-container {
+    border-radius: 5px;
+    border: 1px solid #E8EAED;
+    margin-top: 20px;
+}
+
+.editor-label {
+    position: relative;
+    top: -9px;
+    left: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: smaller;
+}
+
+.color-label {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: smaller;
+}
+
+.background-color-selector {
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid #E8EAED;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.font-container {
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid #E8EAED;
+}
+
+.add-tag {
+    height: 50px;
+}
+
+.tag-adder {
+    width: 70%;
+}
+
+.tag {
+    padding: 10px;
+    background-color: #ffffff60;
+    margin: 5px 5px 5px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: #ff00a760;
+}
+
+.tag:hover .cancel-button {
+    display: block;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.button-container-bottom .mat-custom {
+    background-color: #E8CC6E !important;
+}
+
+.button-container-bottom {
+    margin-top: 20px;
+}
+
+.mat-custom {
+    background-color: #e8cc6e;
+}
+
+.add {
+    font-weight: 800;
 }

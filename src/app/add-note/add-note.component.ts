@@ -67,11 +67,19 @@ export class AddNoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = {};
+    this.addNote = false;
+    this.backgroundColor = "#3C3F43";
+    this.textColor = "#E8EAED";
+    this.fontFamily;
+    this.selectedFont = 'Cabin';
+    this.tags = [];
+    this.links = [];
+
   }
 
   updateColor(event) {
-    this.data.textColor = event.target.value;
-    this.textColor = event.target.value;
+    this.data.textColor = event;
+    this.textColor = event;
   }
 
   updateBGColor(color) {
@@ -82,19 +90,18 @@ export class AddNoteComponent implements OnInit {
 
   toggleAddNote() {
     this.addNote = true;
-    this.router.navigate(['#add-note']);
   }
 
   updateValueTitle(event) {
-    this.data.title = event.target.value;
+    this.data.title = event;
   }
 
   updateValueSubtitle(event) {
-    this.data.subtitle = event.target.value;
+    this.data.subtitle = event;
   }
 
   updateValueAuthor(event) {
-    this.data.author = event.target.value;
+    this.data.author = event;
   }
 
   updateContent({ editor }: ChangeEvent) {
@@ -103,19 +110,19 @@ export class AddNoteComponent implements OnInit {
   }
 
   updateFontSize(event) {
-    this.data.fontSize = event.target.value;
+    this.data.fontSize = event;
   }
 
   addToTags(event) {
     let check = 0;
     this.tags.forEach(element => {
-      if (element === event.target.value.trim()) {
+      if (element === event.trim()) {
         check = 1;
       }
     });
 
     if (check == 0) {
-      this.tags.push(event.target.value);
+      this.tags.push(event);
     }
   }
 
@@ -133,17 +140,17 @@ export class AddNoteComponent implements OnInit {
   addToLinks(event) {
     let check = 0;
     this.links.forEach(element => {
-      if (element === event.target.value.trim()) {
+      if (element === event.trim()) {
         check = 1;
       }
     });
 
     let pattern = new RegExp(/(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
-    let res = pattern.test(event.target.value);
+    let res = pattern.test(event);
 
     if (check == 0) {
       if (res) {
-        this.links.push(event.target.value);
+        this.links.push(event);
         this.linkError = "";
       } else {
         this.linkError = "Invalid Link";
@@ -176,5 +183,13 @@ export class AddNoteComponent implements OnInit {
     this.service.addtoNotes(this.data);
     this.data = {};
     this.addNote = false;
+    this.backgroundColor = "#3C3F43";
+    this.textColor = "#E8EAED";
+    this.fontFamily;
+    this.selectedFont = 'Cabin';
+    this.tags = [];
+    this.links = [];
+    this.editor.data = "Add your content here !";
+    this.showAdvancedSettings = false;
   }
 }
