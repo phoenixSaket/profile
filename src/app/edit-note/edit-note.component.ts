@@ -127,13 +127,13 @@ export class EditNoteComponent implements OnInit {
   addToTags(event) {
     let check = 0;
     this.tags.forEach(element => {
-      if (element === event.target.value.trim()) {
+      if (element === event.trim()) {
         check = 1;
       }
     });
 
     if (check == 0) {
-      this.tags.push(event.target.value);
+      this.tags.push(event);
     }
   }
 

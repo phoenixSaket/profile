@@ -33,26 +33,34 @@
             </div>
         </div>
 
+        <span class="color-label" [style.backgroundColor]="this.note.backgroundColor">Select your font of choice</span>
         <div class="font-container w-100 d-flex justify-content-between">
-            <mat-form-field class="w-100 d-flex flex-column justify-content-center">
+            <mat-select [(value)]="selectedFont">
+                <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">
+                    {{font}}
+                </mat-option>
+            </mat-select>
+            <!-- <mat-form-field class="w-100 d-flex flex-column justify-content-center">
                 <mat-label>Select you font of choice</mat-label>
                 <mat-select [(value)]="selectedFont">
                     <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">
                         {{font}}
                     </mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
             <!-- <mat-form-field id="font-size-selector" class="font-size-selector w-25 d-flex flex-column justify-content-center">
                 <mat-label>Font Size</mat-label>
                 <input matInput type="number" value="15" (change)="updateFontSize($event)">
             </mat-form-field> -->
         </div>
 
-        <div class="tags-adder-container d-flex align-items-center justify-content-between">
-            <mat-form-field class="w-75 d-flex flex-column justify-content-center">
+        <div class="tags-adder-container d-flex align-items-end justify-content-between">
+            <app-input-text class="tag-adder" resetValue=true placeholder="Tag" hasborder="true" label="Tag" [labelBackground]="this.note.backgroundColor" (insertedValue)="addToTags($event)"></app-input-text>
+
+            <!-- <mat-form-field class="w-75 d-flex flex-column justify-content-center">
                 <mat-label>Tags</mat-label>
                 <input #tag matInput type="text" (change)="addToTags($event); tag.value= ''">
-            </mat-form-field>
+            </mat-form-field> -->
             <button mat-raised-button class="add-tag w-25" color="custom">Add tag</button>
         </div>
 

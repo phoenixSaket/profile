@@ -45,3 +45,17 @@
 .margin-top-20 {
     margin-top: 20px;
 }
+
+.font-container {
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 1px solid #E8EAED;
+}
+
+.add-tag {
+    height: 50px;
+}
+
+.tag-adder {
+    width: 70%;
+}
