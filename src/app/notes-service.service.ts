@@ -35,7 +35,7 @@ export class NotesServiceService {
     }
 
     this.notes.default.data.forEach(element => {
-      if(this.currentLogin.userId == element.userId){
+      if(this.currentLogin?.userId == element?.userId){
        this.currentNotesData = element.data; 
       }
     });

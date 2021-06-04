@@ -21,4 +21,8 @@ export class NotesMainPageComponent implements OnInit {
 
   }
 
+  enterSearchDetails(event) {
+    console.log(event);
+  }
+
 }

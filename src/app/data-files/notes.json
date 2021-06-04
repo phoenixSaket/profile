@@ -78,7 +78,7 @@
                 {
                     "title": "Welcome",
                     "subtitle": "Welcome to Notes keeper",
-                    "content": "Edit your font Style, Font Color, Font Size, bbackground Color.</br>Go crazy !",
+                    "content": "Edit your font Style, Font Color, Font Size, background Color.</br>Go crazy !",
                     "date": "30-03-2021",
                     "author": "",
                     "textColor": "#000000",
@@ -87,7 +87,7 @@
                     "fontSize": "",
                     "links": ["https://web.whatsapp.com/"],
                     "images": "",
-                    "tags": ["basic", "welcome", "tag", "basic", "note", "page"]
+                    "tags": ["basic", "welcome", "tag", "basic", "note", "page", "style", "background"]
                 },
                 {
                     "title": "Welcome",
@@ -101,7 +101,21 @@
                     "fontSize": "15px",
                     "links": "",
                     "images": "",
-                    "tags": ["basic", "welcome", "tag", "basic", "note", "welcome", "tag", "basic", "note", "page"]
+                    "tags": ["basic", "welcome", "tag", "note", "page", "add"]
+                },
+                {
+                    "title": "Welcome",
+                    "subtitle": "Welcome to notes keeper",
+                    "content": "Click the settings Icon and then the Edit Icon to edit your note.",
+                    "date": "16-05-2021",
+                    "author": "",
+                    "textColor": "#0a0040",
+                    "backgroundColor": "#16504B",
+                    "fontFamily": "",
+                    "fontSize": "15px",
+                    "links": "",
+                    "images": "",
+                    "tags": ["basic", "welcome", "tag", "basic", "edit", "note", "page"]
                 }
             ]
         }

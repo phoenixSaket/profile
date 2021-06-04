@@ -12,6 +12,7 @@ import { AddNoteComponent } from './add-note/add-note.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { InputTextComponent } from './shared/input-text/input-text.component';
+import { SearchBoxComponent } from './shared/search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InputTextComponent } from './shared/input-text/input-text.component';
     NoteComponent,
     AddNoteComponent,
     EditNoteComponent,
-    InputTextComponent
+    InputTextComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,
