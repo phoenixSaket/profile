@@ -224,15 +224,12 @@ a.ck.ck-button:not(.ck-disabled):hover {
 .login-container {
     background-color: #202124;
     color: #E8EAED;
-    background-image: url(https://besthqwallpapers.com/Uploads/17-12-2017/33649/4k-abstract-waves-creative-dark-background-material-design.jpg);
-    background-position: center;
+    background-image: url("/assets/bg.jpg");
     background-position: center;
     background-attachment: fixed;
     background-origin: border-box;
-    background-origin: border-box;
     background-size: cover;
     background-repeat: no-repeat;
-    background-size: cover;
     background-blend-mode: darken;
 }
 
