@@ -224,7 +224,7 @@ a.ck.ck-button:not(.ck-disabled):hover {
 .login-container {
     background-color: #202124;
     color: #E8EAED;
-    background-image: url("/assets/bg.jpg");
+    background-image: url("https://raw.githubusercontent.com/phoenixSaket/profile/main/src/assets/bg.jpg");
     background-position: center;
     background-attachment: fixed;
     background-origin: border-box;
