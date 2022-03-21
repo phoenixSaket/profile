@@ -13,6 +13,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { InputTextComponent } from './shared/input-text/input-text.component';
 import { SearchBoxComponent } from './shared/search-box/search-box.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SearchBoxComponent } from './shared/search-box/search-box.component';
     BrowserAnimationsModule,
     MaterialModule,
     CKEditorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

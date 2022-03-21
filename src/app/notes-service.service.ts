@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import * as loginData from './data-files/login-data.json';
 import * as notes from './data-files/notes.json';
 
@@ -9,14 +10,19 @@ import * as notes from './data-files/notes.json';
 
 export class NotesServiceService {
 
+  private http: HttpClient;
+  loginObservable: Observable<any>;
   notes: any;
   loginData: any;
   currentLogin: any;
   currentNotesData: any;
   screenWidth: number = screen.width;
-  addNote : boolean;
+  addNote: boolean;
 
-  constructor(private router : Router) {
+  // private url: string = "http://localhost:8000";
+
+  constructor(http: HttpClient) {
+    this.http = http;
     this.notes = notes;
     this.loginData = loginData;
   }
@@ -30,15 +36,23 @@ export class NotesServiceService {
   }
 
   getCurrentNotes() {
-    if(this.currentLogin == undefined) {
-      this.router.navigate(['./']);
-    }
-
     this.notes.default.data.forEach(element => {
-      if(this.currentLogin?.userId == element?.userId){
-       this.currentNotesData = element.data; 
+      if (this.currentLogin?.userId == element?.userId) {
+        this.currentNotesData = element.data;
       }
     });
   }
+
+  getLoginData(email: string, pass: string) {
+
+    let data = null;
+    loginData.default.data.forEach(user => {
+      if (user.email === email && user.password === pass) {
+        data = user;
+      }
+    });
+    return data;
+  }
+
 
 }

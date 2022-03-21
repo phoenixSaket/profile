@@ -1,10 +1,11 @@
-<div class="show-note" *ngIf="!this.editing">
-    <div class="note shadow padding20 d-flex flex-column justify-content-between" [style.fontFamily]="note.fontFamily" [style.backgroundColor]="note.backgroundColor">
+<div class="show-note" *ngIf="!editing">
+    <div class="note shadow padding20 d-flex flex-column justify-content-between" [style.fontFamily]="note.fontFamily"
+        [style.backgroundColor]="note.backgroundColor">
         <div class="top-container text-center w-100 ">
             <!-- <div class="settings d-flex w-100 justify-content-end ">
                 <div class="icon-container d-flex">
 
-                    <div class="other-icons non-active-settings" [ngClass]="this.settingsClicked ? 'show-settings' : 'hide-settings'">
+                    <div class="other-icons non-active-settings" [ngClass]="settingsClicked ? 'show-settings' : 'hide-settings'">
                         <span class="material-icons pointer space" (click)="editClick()">
                         edit
                     </span>
@@ -13,7 +14,7 @@
                     </span>
                     </div>
 
-                    <span class="material-icons pointer active-settings" [ngClass]="this.settingsClicked ? 'rotate' : 'anti-rotate'" (click)="settingsClick()">
+                    <span class="material-icons pointer active-settings" [ngClass]="settingsClicked ? 'rotate' : 'anti-rotate'" (click)="settingsClick()">
                     settings
                 </span>
 
@@ -21,23 +22,25 @@
             </div> -->
             <div class="title-container">
                 <span class="title">
-                {{note.title}}
-            </span>
+                    {{note.title}}
+                </span>
             </div>
             <div class="subtitle-container">
                 <span class="subtitle">
-                {{note.subtitle}}
-            </span>
+                    {{note.subtitle}}
+                </span>
             </div>
         </div>
 
         <div class="middle-container" [style.fontSize]="note.fontSize">
             <div class="content-container">
-                <!-- {{this.shortContent}} -->
-                <div [innerHTML]="this.shortContent"></div>
+                <!-- {{shortContent}} -->
+                <div [innerHTML]="shortContent"></div>
                 <div class="more-less-container w-100 d-flex justify-content-end">
-                    <div class="bold-italic pointer" (click)="toggleShortContent()" *ngIf="this.contentShortened && this.contentLength">Show More</div>
-                    <div class="bold-italic pointer" (click)="toggleShortContent()" *ngIf="!this.contentShortened && this.contentLength">Show Less</div>
+                    <div class="bold-italic pointer" (click)="toggleShortContent()"
+                        *ngIf="contentShortened && contentLength">Show More</div>
+                    <div class="bold-italic pointer" (click)="toggleShortContent()"
+                        *ngIf="!contentShortened && contentLength">Show Less</div>
                 </div>
             </div>
         </div>
@@ -64,8 +67,9 @@
             </div>
         </div>
     </div>
+
 </div>
 
-<div class="edit-note" *ngIf="this.editing">
+<div class="edit-note" *ngIf="editing">
     <app-edit-note [note]="note" (cancelNote)="cancelEditing($event)"></app-edit-note>
 </div>

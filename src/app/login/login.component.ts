@@ -23,37 +23,35 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let [email, password] = [localStorage.getItem("Email"), localStorage.getItem("Password")];
-    if (email && email.length > 0 && password && password.length > 0) {
+  }
+
+  checkLogin(event, isGuestLogin?) {
+    // event.preventDefault();
+    let [email, password] = [this.email, this.password];
+    if (event == null && isGuestLogin) {
+      [email, password] = ["guest", "pass"];
+    }
+    this.loginChecked = true;
+    let error = false;
+
+    let data = this.service.getLoginData(email, password);
+    if (data) {
+      console.log("Login Successful");
+      error = false;
+      this.isLoginValid = true;
+      this.service.setCurrentLogin(data);
       this.router.navigate(["/notes"]);
-      this.checkLogin({ email: email, password: password });
-    } else {
-      this.router.navigate(["/"]);
+    }
+    if (!!data) {
+      console.log("Error : ");
+      error = true;
+      this.errorString = "||    INVALID CREDENTIALS     ||";
+      this.isLoginValid = false;
     }
   }
 
-  checkLogin(event) {
-    // event.preventDefault();
-    this.loginChecked = true;
-    let [email, password] = [localStorage.getItem("Email"), localStorage.getItem("Password")];
-
-
-    this.service.loginData.default.data.forEach(element => {
-      if (this.email === element.email) {
-        if (this.password === element.password) {
-          this.isLoginValid = true;
-          this.service.setCurrentLogin(element);
-          this.router.navigate(["/notes"]);
-         
-        } else {
-          this.errorString = "||    INVALID CREDENTIALS     ||";
-          this.isLoginValid = false;
-        }
-      } else {
-        this.errorString = "||     INVALID CREDENTIALS     ||";
-        this.isLoginValid = false;
-      }
-    });
+  doGuestLogin() {
+    this.checkLogin(null, true);
   }
 
   mailChanged(event) {

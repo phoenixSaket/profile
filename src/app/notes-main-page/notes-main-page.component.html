@@ -7,7 +7,7 @@
 
 
 <div class="search-container d-flex w-100 justify-content-center">
-    <app-search-box class="w-50" [value]="" placeholder="Search by keyword" hasborder="true" [label]="{keyword: ' Search by keyword ', tag: 'Search by tag ', color : 'Search by color '}" [labelBackground]="this.notesData.backgroundColor" (insertedValue)="enterSearchDetails($event)"></app-search-box>
+    <app-search-box class="w-50" [value]="" placeholder="Search by tag" hasborder="true" [label]="{keyword: ' Search by keyword ', tag: 'Search by tag ', color : 'Search by color '}" [labelBackground]="this.notesData?.backgroundColor ? this.notesData?.backgroundColor : '#808080'" (insertedValue)="enterSearchDetails($event)"></app-search-box>
 </div>
 
 <div class="notes-container">

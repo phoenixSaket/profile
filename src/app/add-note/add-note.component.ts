@@ -192,4 +192,9 @@ export class AddNoteComponent implements OnInit {
     this.editor.data = "Add your content here !";
     this.showAdvancedSettings = false;
   }
+
+  cancelEdit() {
+    this.addNote = !this.addNote;
+    this.showAdvancedSettings = false; 
+  }
 }

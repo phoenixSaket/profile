@@ -48,6 +48,11 @@
     color: #121212;
 }
 
+.button-container {
+    display: flex;
+    gap: 5px;
+}
+
 /* Start for mobile CSS */
 @media (min-width: 320px) and (max-width: 767px) {
     .responsive-width { 

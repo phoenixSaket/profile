@@ -1,13 +1,13 @@
-<span class="label" [style.backgroundColor]="this.labelBackground">{{label.keyword}}</span>
-<input class="input-text" type="text" [value]="this.value.keyword" [style.color]="this.color" [style.borderColor]="this.borderColor" [placeholder]="this.placeholder" (keydown)="valueChange($event)" />
+<!-- <span class="label" [style.backgroundColor]="this.labelBackground">{{label.keyword}}</span>
+<input class="input-text" type="text" [value]="this.value.keyword" [style.color]="this.color" [style.borderColor]="this.borderColor" [placeholder]="this.placeholder" (keyup)="valueChange($event)" /> -->
 
 <div class="d-flex w-100 justify-content-between">
-    <div class="w-50 padding-right-10">
+    <div class="w-100"> <!-- padding-right-10 -->
         <span class="label" [style.backgroundColor]="this.labelBackground">{{label.tag}}</span>
-        <input class="input-text" type="text" [value]="this.value.tag" [style.color]="this.color" [style.borderColor]="this.borderColor" [placeholder]="this.placeholder" (keydown)="valueChange($event)" />
+        <input class="input-text" type="text" [value]="this.value.tag" [style.color]="this.color" [style.borderColor]="this.borderColor" [placeholder]="this.placeholder" (keyup)="valueChange($event)" />
     </div>
-    <div class="w-50 padding-left-10">
+    <!-- <div class="w-50 padding-left-10">
         <span class="label" [style.backgroundColor]="this.labelBackground">{{label.color}}</span>
-        <input class="input-text" type="text" [value]="this.value.color" [style.color]="this.color" [style.borderColor]="this.borderColor" [placeholder]="this.placeholder" (keydown)="valueChange($event)" />
-    </div>
+        <input class="input-text" type="text" [value]="this.value.color" [style.color]="this.color" [style.borderColor]="this.borderColor" [placeholder]="this.placeholder" (keyup)="valueChange($event)" />
+    </div> -->
 </div>

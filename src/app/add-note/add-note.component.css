@@ -27,6 +27,10 @@ input.mat-input-element.mat-form-field-autofill-control {
     height: 100%;
 }
 
+.align-items-end {
+    align-items: flex-end;
+}
+
 .font-size-25 {
     font-size: 25px;
 }
@@ -129,6 +133,7 @@ input[type="color"] {
     .notOnMobile {
         display: none !important;
     }
+
     .onlyOnMobile {
         display: block;
         position: fixed;
@@ -144,6 +149,7 @@ input[type="color"] {
     .notOnMobile {
         display: flex !important;
     }
+
     .onlyOnMobile {
         display: none;
     }
@@ -215,6 +221,7 @@ input[type="color"] {
     padding: 15px 10px;
     border-radius: 5px;
     border: 1px solid #E8EAED;
+    width: calc(100% - 20px);
 }
 
 .add-tag {

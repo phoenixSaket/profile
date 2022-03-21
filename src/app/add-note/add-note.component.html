@@ -60,9 +60,9 @@
                 </div>
             </div>
         </div> -->
-
+        
         <span class="color-label" [style.backgroundColor]="this.backgroundColor">Select your font of choice</span>
-        <div class="font-container w-100 d-flex justify-content-between">
+        <div class="font-container d-flex justify-content-between">
             <mat-select [(value)]="selectedFont">
                 <mat-option matInput *ngFor="let font of this.fontArray" [value]="font" [style.fontFamily]="font">
                     {{font}}

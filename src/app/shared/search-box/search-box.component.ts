@@ -39,7 +39,6 @@ export class SearchBoxComponent implements OnInit {
   }
 
   valueChange(event) {
-    console.log(event.target.value)
     this.insertedValue.emit(event.target.value);
     if (this.resetValue) {
       event.target.value = "";

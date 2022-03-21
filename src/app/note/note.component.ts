@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-note',
@@ -9,11 +8,11 @@ import { element } from 'protractor';
 export class NoteComponent implements OnInit {
 
   @Input() note: any;
-  shortContent: string = "";
-  contentShortened: boolean = false;
-  contentLength: boolean = false;
-  settingsClicked: boolean = false;
-  editing: boolean = false;
+  public shortContent: string = "";
+  public contentShortened: boolean = false;
+  public contentLength: boolean = false;
+  public settingsClicked: boolean = false;
+  public editing: boolean = false;
 
   constructor() { }
 
@@ -25,7 +24,7 @@ export class NoteComponent implements OnInit {
   shortenContent() {
     let content = this.note.content;
     let words = content.toString().split(' ');
-    
+
     if (words.length > 30) {
       for (let i = 0; i < 30; i++) {
         this.shortContent = this.shortContent + ' ' + words[i];
@@ -54,7 +53,7 @@ export class NoteComponent implements OnInit {
   }
 
   editClick() {
-    if(!this.editing) {
+    if (!this.editing) {
       this.editing = true;
     }
   }

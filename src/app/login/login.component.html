@@ -15,7 +15,7 @@
                     <div class="w-100 d-flex align-items-center justify-content-between padding5">
                         <mat-label>Email</mat-label>
                         <div class="w-75">
-                            <input matInput type="email" placeholder="me@mail.com" name="email" value=""
+                            <input matInput type="text" placeholder="me@mail.com" name="email" value=""
                                 class="form-control" formControlName="emailId" (change)="mailChanged($event)" />
                         </div>
                     </div>
@@ -28,9 +28,11 @@
                         </div>
                     </div>
 
-                    <div class="button-container w-75">
-                        <button class="margin-top-20 w-100" mat-raised-button color="custom"
+                    <div class="button-container w-100">
+                        <button class="margin-top-20 w-50" mat-raised-button color="custom"
                             (click)="checkLogin($event)">Login</button>
+                        <button class="margin-top-20 w-50" mat-raised-button color="custom"
+                            (click)="doGuestLogin()">Login As Guest</button>
                     </div>
                 </div>
             </div>
