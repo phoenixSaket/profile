@@ -68,7 +68,6 @@ export class EditNoteComponent implements OnInit {
   constructor(private service: NotesServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.note);
     this.data.title = this.note.title ? this.note.title : "";
     this.data.author = this.note.author ? this.note.author : "";
     this.data.backgroundColor = this.note.backgroundColor ? this.note.backgroundColor : "";
@@ -82,7 +81,6 @@ export class EditNoteComponent implements OnInit {
     this.data.links = this.note.links ? this.note.links : [];
     this.data.textColor = this.note.textColor ? this.note.textColor : "";
     this.editor.data = this.data.content;
-    console.log(this.data);
     
   }
 
@@ -95,7 +93,6 @@ export class EditNoteComponent implements OnInit {
     this.data.backgroundColor = event;
     this.note.backgroundColor = event;
     this.backgroundColor = event;
-    console.log(event);
   }
 
   toggleAddNote() {
@@ -116,7 +113,6 @@ export class EditNoteComponent implements OnInit {
 
   updateContent({ editor }: ChangeEvent) {
     this.editor.data = editor.getData();
-    // console.log( data );
   }
 
   updateFontSize(event) {

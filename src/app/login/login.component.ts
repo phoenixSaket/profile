@@ -36,14 +36,12 @@ export class LoginComponent implements OnInit {
 
     let data = this.service.getLoginData(email, password);
     if (data) {
-      console.log("Login Successful");
       error = false;
       this.isLoginValid = true;
       this.service.setCurrentLogin(data);
       this.router.navigate(["/notes"]);
     }
     if (!!data) {
-      console.log("Error : ");
       error = true;
       this.errorString = "||    INVALID CREDENTIALS     ||";
       this.isLoginValid = false;

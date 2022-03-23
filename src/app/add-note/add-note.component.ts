@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NotesServiceService } from '../notes-service.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular';
-import { element } from 'protractor';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-note.component.css']
 })
 export class AddNoteComponent implements OnInit {
+
+  @Output() addingNote: EventEmitter<any> = new EventEmitter(); 
 
   public Editor = ClassicEditor;
 
@@ -85,11 +86,11 @@ export class AddNoteComponent implements OnInit {
   updateBGColor(color) {
     this.data.backgroundColor = color;
     this.backgroundColor = color;
-    console.log(color);
   }
 
   toggleAddNote() {
     this.addNote = true;
+    this.addingNote.emit(this.addNote);
   }
 
   updateValueTitle(event) {
@@ -106,7 +107,6 @@ export class AddNoteComponent implements OnInit {
 
   updateContent({ editor }: ChangeEvent) {
     this.editor.data = editor.getData();
-    // console.log( data );
   }
 
   updateFontSize(event) {

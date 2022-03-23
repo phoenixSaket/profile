@@ -1,9 +1,9 @@
-<!-- <div class="back-container w-100 justify-content-end align-items-center d-flex  pointer" routerLink="/">
+<div class="back-container w-100 justify-content-end align-items-center d-flex  pointer" routerLink="/">
     <div class="align-items-center d-flex padding20">
         <i class="fa fa-sign-out padding-right10 font-size-25"></i>
         <span>Log out</span>
     </div>
-</div> -->
+</div>
 
 
 <div class="search-container d-flex w-100 justify-content-center">
@@ -15,6 +15,6 @@
         <app-note [note]="note"></app-note>
     </div>
     <div>
-        <app-add-note></app-add-note>
+        <app-add-note (addingNote)="scrollToBottom($event)"></app-add-note>
     </div>
 </div>

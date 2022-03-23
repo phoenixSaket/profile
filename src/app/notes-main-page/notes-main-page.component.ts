@@ -30,7 +30,7 @@ export class NotesMainPageComponent implements OnInit {
       this.backupNotes.forEach(note => {
         note.tags.forEach(tag => {
           if (tag.includes(event)) {
-            if(lastAddedNote != note) {
+            if (lastAddedNote != note) {
               lastAddedNote = note;
               notesToShow.push(note);
             }
@@ -44,5 +44,14 @@ export class NotesMainPageComponent implements OnInit {
       this.notesData = this.backupNotes;
     }
   }
+
+  scrollToBottom(event) {
+    if(event) {
+      setTimeout(() => {
+        document.body.scrollBy(0, document.getElementsByClassName("main-container")[0].clientHeight + 450);
+      }, 100);
+    }
+  }
+
 
 }
